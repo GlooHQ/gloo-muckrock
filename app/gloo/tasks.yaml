@@ -1,0 +1,31 @@
+tasks:
+  SearchDocuments:
+    input: SearchInput
+    output: SearchOutput
+  ClassifyMovieGenre:
+    input: ClassifyMovieInput
+    output: ClassifyMovieOutput
+
+types:
+  ClassifyMovieInput:
+    message: string
+  ClassifyMovieOutput:
+    clues: list<string>
+    reasoning: string
+    # If you want multi-class classification, use a list like list<Category>
+    classification: Genre
+    friendlyResponse: string
+  Genre:
+    enum:
+      - scifi
+      - fantasy
+      - mystery
+  ## Search
+  SearchInput:
+    query: string
+    context: string
+  SearchOutput:
+    clues: list<string>
+    reasoning: string
+    isAnswerInContext: string
+    answer: string
