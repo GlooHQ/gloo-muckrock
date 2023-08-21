@@ -1,31 +1,28 @@
 tasks:
-  SearchDocuments:
-    input: SearchInput
-    output: SearchOutput
-  ClassifyMovieGenre:
-    input: ClassifyMovieInput
-    output: ClassifyMovieOutput
+  ProcessRequest:
+    input: ClassifyRequestInput
+    output: ClassifyRequestOutput
 
 types:
-  ClassifyMovieInput:
-    message: string
-  ClassifyMovieOutput:
-    clues: list<string>
+  ClassifyRequestInput:
+    request: string
+  ClassifyRequestOutput:
+    trackingNumber: string
+    dateEstimate: string
+    price: int
+    classification: Classification
     reasoning: string
-    # If you want multi-class classification, use a list like list<Category>
-    classification: Genre
-    friendlyResponse: string
-  Genre:
+  Classification:
+    clues: string
+    reasoning: string
+    status: Status
+  Status:
     enum:
-      - scifi
-      - fantasy
-      - mystery
-  ## Search
-  SearchInput:
-    query: string
-    context: string
-  SearchOutput:
-    clues: list<string>
-    reasoning: string
-    isAnswerInContext: string
-    answer: string
+      - PROCESSED
+      - FIX
+      - PAYMENT
+      - REJECTED
+      - NO_DOCS
+      - DONE
+      - PARTIAL
+      - INDETERMINATE

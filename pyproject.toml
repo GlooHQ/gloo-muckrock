@@ -1,14 +1,19 @@
 [tool.poetry]
-name = "gloo-starter-python"
+name = "gloo-muckrock"
 version = "0.1.0"
 description = ""
 authors = ["None"]
 readme = "README.md"
-packages = [{include = "gloo_starter_python"}]
+packages = [{include = "app"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
+gloo-lib = "^1.0.43"
+pandas = "^2.0.3"
 
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.25.1"
 
 [build-system]
 requires = ["poetry-core"]
