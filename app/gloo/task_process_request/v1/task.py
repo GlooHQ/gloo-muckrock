@@ -5,6 +5,7 @@ from ...types import StatusModel, StatusModel__Definition
 from ...types import ClassificationModel, ClassificationModel__Definition
 from .generated import process_request__Definition, VARS
 import asyncio
+import json
 
 
 class process_request(GlooLLMTaskInterface):
@@ -33,14 +34,25 @@ class process_request(GlooLLMTaskInterface):
     def override_prompt(self) -> str:
         # Prompts are auto dedented and trimmed at the start. The end of the prompt is not trimmed.
         return f"""
-        Write your prompt here. For any variable not related to your input or output model, use {{var_name}} and add the value 
-        to prompt_paramters or pass it into the run function. You can use the VARS object to access the input and output models.
+        You are a world-class analyzer for public records requests. Your job is to extract the information from the request and classify the status of the request.
+         
+        For the "status" field, using the following definitions:
+        {VARS.out_Status.cases}
 
         INPUT:
-        {VARS.input}
+        {VARS.input.request}
 
         OUTPUT FORMAT:
-        {VARS.output}
+        {{
+            "trackingNumber": string,
+            "dateEstimate": string, as ISO 8601,
+            "price": int, use -1 if not present,
+            "classification": {{
+                "clues": a few phrases, separated by a comma, as a string,
+                "reasoning": Explain why the clues may match one of the statuses described,
+                "status": the actual status, as a string. If you cannot determine the correct status, use "INDETERMINATE"
+            }}
+        }}
 
         JSON:
         """
@@ -99,7 +111,7 @@ class process_request(GlooLLMTaskInterface):
                         },
                         "DONE": {
                             "alias": "DONE",
-                            "definition": "The agency has supplied or attached all of the responsive documents or records for the request. This is the final response.",
+                            "definition": "The text indicates that a response to the public record request is now attached or completed.",
                         },
                         "PARTIAL": {
                             "alias": "PARTIAL",
@@ -122,7 +134,7 @@ class process_request(GlooLLMTaskInterface):
                     },
                     "status": {
                         "alias": "status",
-                        "definition": f"{VARS.out_Classification.status.desc}",
+                        "definition": "string",
                     },
                 },
                 "ClassifyRequestOutput": {
@@ -140,7 +152,7 @@ class process_request(GlooLLMTaskInterface):
                     },
                     "classification": {
                         "alias": "classification",
-                        "definition": "Status",
+                        "definition": "string",
                     },
                     "reasoning": {
                         "alias": "reasoning",
@@ -153,8 +165,10 @@ class process_request(GlooLLMTaskInterface):
     # By default we assume the model outputs json and we parse it using the pydantic model.
     # GlooLLMTaskInterface.parse_raw converts aliases to their field names.
     # Highly recommend calling super().parse() if you override this function.
-    # def override_parser(self, model: typing.Type[ClassifyRequestOutputModel], raw_llm_response: str) -> ClassifyRequestOutputModel:
-    #    return super().parse(model, raw_llm_response)
+    def override_parser(
+        self, model: typing.Type[ClassifyRequestOutputModel], raw_llm_response: str
+    ) -> ClassifyRequestOutputModel:
+        return ClassifyRequestOutputModel.parse_obj(json.loads(raw_llm_response))
 
 
 # You can add additional parameters to task.run.

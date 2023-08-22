@@ -2,8 +2,17 @@ tasks:
   ProcessRequest:
     input: ClassifyRequestInput
     output: ClassifyRequestOutput
-
+  Summarize:
+    input: SummarizeInput
+    output: SummarizeOutput
 types:
+  # Summarization
+  SummarizeInput:
+    text: string
+  SummarizeOutput:
+    summary: string
+
+  # Classification
   ClassifyRequestInput:
     request: string
   ClassifyRequestOutput:
@@ -11,7 +20,6 @@ types:
     dateEstimate: string
     price: int
     classification: Classification
-    reasoning: string
   Classification:
     clues: string
     reasoning: string

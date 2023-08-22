@@ -34,7 +34,6 @@ class ClassifyRequestOutputModel(BaseModel):
     dateEstimate: str
     price: int
     classification: ClassificationModel
-    reasoning: str
 
 
 # ===============================================
@@ -134,7 +133,6 @@ class ClassifyRequestOutputModel__Definition(typing.TypedDict):
     dateEstimate: FieldDefinition
     price: FieldDefinition
     classification: FieldDefinition
-    reasoning: FieldDefinition
 
 
 class ClassifyRequestOutputModel__InputVars:
@@ -145,7 +143,6 @@ class ClassifyRequestOutputModel__InputVars:
         self.classification = ClassificationModel__InputVars(
             prefix=f"{prefix}classification."
         )
-        self.reasoning = f"{{{prefix}reasoning}}"
         self.__val = f"{{{prefix}ClassifyRequestOutput.val}}"
 
     def __str__(self):
@@ -158,7 +155,6 @@ class ClassifyRequestOutputModel__OutputVars:
         self.dateEstimate = FieldVars(name="ClassifyRequestOutput.dateEstimate")
         self.price = FieldVars(name="ClassifyRequestOutput.price")
         self.classification = FieldVars(name="ClassifyRequestOutput.classification")
-        self.reasoning = FieldVars(name="ClassifyRequestOutput.reasoning")
 
         self.json = "{" + "ClassifyRequestOutput.json}"
 
