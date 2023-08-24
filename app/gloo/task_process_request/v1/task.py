@@ -1,7 +1,11 @@
 import typing
 from gloo_py import GlooLLMTaskInterface, LLMClient, OpenAILLMClient
 from ...types import ClassifyRequestInputModel, ClassifyRequestOutputModel
-from ...types import StatusModel, StatusModel__Definition
+from ...types import (
+    StatusModel,
+    StatusModel__Definition,
+    RecordsStatusModel__Definition,
+)
 from ...types import ClassificationModel, ClassificationModel__Definition
 from .generated import process_request__Definition, VARS
 import asyncio
@@ -28,30 +32,39 @@ class process_request(GlooLLMTaskInterface):
     # > from gloo_py import set_default_llm_client, OpenAILLMClient
     # > set_default_llm_client(OpenAILLMClient(model_name="gpt-4", temperature=1))
     #
-    # def override_llm_client(self) -> LLMClient:
-    #    return OpenAILLMClient(model_name="gpt-3.5-turbo", temperature=0)
+    def override_llm_client(self) -> LLMClient:
+        return OpenAILLMClient(model_name="gpt-4", temperature=0)
 
     def override_prompt(self) -> str:
         # Prompts are auto dedented and trimmed at the start. The end of the prompt is not trimmed.
         return f"""
-        You are a world-class analyzer for public records requests. Your job is to extract the information from the request and classify the status of the request.
+        You are analyzing public records correspondence to figure out what the status of the request for public records is. Your job is to extract the information from the government's response and classify the status of the request.
          
-        For the "status" field, using the following definitions:
+        For the "requestStatus.requestStatus" field, use the following definitions:
         {VARS.out_Status.cases}
 
-        INPUT:
+        For the "recordsStatus" field, use the following definitions:
+        "MORE_RECORDS_PENDING": The agency has indicated that there are more records to be released soon for this request.
+        "NO_RECORDS_FOUND": The agency has indicated that there are no records found for this request.
+        "RECORDS_FOUND": The agency has indicated that there are records found for this request.
+        "NOT_APPLICABLE": The text does not match any other recordsStatus. It may be that the request is still in progress.
+
+
+        Agency's response to user:
+        ###
         {VARS.input.request}
+        ###
 
         OUTPUT FORMAT:
         {{
-            "trackingNumber": string,
-            "dateEstimate": string, as ISO 8601,
+            "trackingNumber": string or empty string,
+            "dateEstimate": string, as ISO 8601 or empty string,
             "price": int, use -1 if not present,
-            "classification": {{
-                "clues": a few phrases, separated by a comma, as a string,
-                "reasoning": Explain why the clues may match one of the statuses described,
-                "status": the actual status, as a string. If you cannot determine the correct status, use "INDETERMINATE"
-            }}
+            "requestStatus": {{
+                "reasoning": Show your critical thinking of what things can help you determine the requestStatus.
+                "requestStatus": the public records request's status, as described earlier."
+            }},
+            recordsStatus: The recordsStatus, as described earlier.
         }}
 
         JSON:
@@ -83,39 +96,59 @@ class process_request(GlooLLMTaskInterface):
     def override_output_definitions(self) -> process_request__Definition:
         return process_request__Definition(
             **{
+                "RecordsStatus": RecordsStatusModel__Definition(
+                    alias="Status",
+                    definition="string",
+                    case_name_formatter=lambda name: name,
+                    case_formatter=lambda name, desc: f"{name}: {desc}",
+                    cases={
+                        "MORE_RECORDS_PENDING": {
+                            "alias": "MORE_RECORDS_PENDING",
+                            "definition": "The agency has indicated that there are more records to be released soon for this request",
+                        },
+                        "NO_RECORDS_FOUND": {
+                            "alias": "NO_RECORDS_FOUND",
+                            "definition": "The agency has indicated that there are no records found for this request",
+                        },
+                        "RECORDS_FOUND": {
+                            "alias": "RECORDS_FOUND",
+                            "definition": "The agency has indicated that there are records found for this request",
+                        },
+                        "NOT_APPLICABLE": {
+                            "alias": "NOT_APPLICABLE",
+                            "definition": "The text does not match any other recordsStatus. It may be that the request is still in progress.",
+                        },
+                    },
+                ),
                 "Status": StatusModel__Definition(
                     alias="Status",
                     definition="string",
                     case_name_formatter=lambda name: name,
                     case_formatter=lambda name, desc: f"{name}: {desc}",
                     cases={
-                        "PROCESSED": {
-                            "alias": "PROCESSED",
-                            "definition": "The agency is working on the request and will respond again. This includes, but is not limited to, acknowledgment letters and automated responses from portals or online systems.",
+                        "REQUEST_REJECTED": {
+                            "alias": "REQUEST_REJECTED",
+                            "definition": "The request has been denied or needs to be re-routed elsewhere, and no search was done.",
                         },
-                        "FIX": {
-                            "alias": "FIX",
+                        "IN_PROGRESS": {
+                            "alias": "IN_PROGRESS",
+                            "definition": "The agency accepted the request and is now working on it.",
+                        },
+                        "FIX_REQUIRED": {
+                            "alias": "FIX_REQUIRED",
                             "definition": "The agency has asked the requestor for clarification, to supply additional information, to narrow down a request, or complete an additional task in order to allow them to continue processing the request",
                         },
-                        "PAYMENT": {
-                            "alias": "PAYMENT",
-                            "definition": "The requestor must pay a fee for the agency to continue processing",
+                        "PAYMENT_REQUIRED": {
+                            "alias": "PAYMENT_REQUIRED",
+                            "definition": "The requestor must pay a fee for the agency to continue processing.",
                         },
-                        "REJECTED": {
-                            "alias": "REJECTED",
-                            "definition": "The request has been denied",
+                        "REQUEST_COMPLETED": {
+                            "alias": "REQUEST_COMPLETED",
+                            "definition": "The text indicates that a response to the public record request is now attached or completed and some records were found (even if they are redacted). If there is nothing else for the agency or the user to do, then this is the correct status.",
                         },
-                        "NO_DOCS": {
-                            "alias": "NO_DOCS",
-                            "definition": "The agency has determined that there are no responsive documents for",
-                        },
-                        "DONE": {
-                            "alias": "DONE",
-                            "definition": "The text indicates that a response to the public record request is now attached or completed.",
-                        },
-                        "PARTIAL": {
-                            "alias": "PARTIAL",
-                            "definition": "The agency has supplied some of the responsive documents, but has indicated that they will be releasing more documents in the future",
+                        "PENDING_MORE_DOCS": {
+                            "alias": "PENDING_MORE_DOCS",
+                            "definition": "Only choose this if the agency has explicitly stated that they will be releasing more documents in the future.",
                         },
                         "INDETERMINATE": {
                             "alias": "INDETERMINATE",
@@ -124,17 +157,17 @@ class process_request(GlooLLMTaskInterface):
                     },
                 ),
                 "Classification": {
-                    "clues": {
-                        "alias": "clues",
-                        "definition": "2-3 sentences as a string",
-                    },
+                    # "clues": {
+                    #     "alias": "clues",
+                    #     "definition": "a couple of sentences from the text that tell us about the status of this request",
+                    # },
                     "reasoning": {
                         "alias": "reasoning",
-                        "definition": "string",
+                        "definition": "A sentence describing what status the request may be in and why",
                     },
-                    "status": {
+                    "requestStatus": {
                         "alias": "status",
-                        "definition": "string",
+                        "definition": "string, the best matching public-records request status using the REASONING, and INPUT",
                     },
                 },
                 "ClassifyRequestOutput": {

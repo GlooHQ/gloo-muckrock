@@ -19,18 +19,24 @@ types:
     trackingNumber: string
     dateEstimate: string
     price: int
-    classification: Classification
+    recordsStatus: RecordsStatus
+    requestStatus: Classification
   Classification:
-    clues: string
+    # clues: string
     reasoning: string
-    status: Status
+    requestStatus: Status
   Status:
     enum:
-      - PROCESSED
-      - FIX
-      - PAYMENT
-      - REJECTED
-      - NO_DOCS
-      - DONE
-      - PARTIAL
+      - IN_PROGRESS
+      - FIX_REQUIRED
+      - PAYMENT_REQUIRED
+      - REQUEST_REJECTED
+      - REQUEST_COMPLETED
+      - PENDING_MORE_DOCS
       - INDETERMINATE
+  RecordsStatus:
+    enum:
+      - NOT_APPLICABLE
+      - RECORDS_FOUND
+      - NO_RECORDS_FOUND
+      - MORE_RECORDS_PENDING

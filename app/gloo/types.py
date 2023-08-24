@@ -8,37 +8,97 @@ from gloo_py.llm_task_interface.vars_manager import FieldDefinition, FieldVars
 # ===============================================
 
 
+class SummarizeInputModel(BaseModel):
+    text: str
+
+
+class SummarizeOutputModel(BaseModel):
+    summary: str
+
+
 class ClassifyRequestInputModel(BaseModel):
     request: str
 
 
 class StatusModel(StrEnum):
-    PROCESSED = "PROCESSED"
-    FIX = "FIX"
-    PAYMENT = "PAYMENT"
-    REJECTED = "REJECTED"
-    NO_DOCS = "NO_DOCS"
-    DONE = "DONE"
-    PARTIAL = "PARTIAL"
+    IN_PROGRESS = "IN_PROGRESS"
+    FIX_REQUIRED = "FIX_REQUIRED"
+    PAYMENT_REQUIRED = "PAYMENT_REQUIRED"
+    REQUEST_REJECTED = "REQUEST_REJECTED"
+    REQUEST_COMPLETED = "REQUEST_COMPLETED"
+    PENDING_MORE_DOCS = "PENDING_MORE_DOCS"
     INDETERMINATE = "INDETERMINATE"
 
 
+class RecordsStatusModel(StrEnum):
+    NOT_APPLICABLE = "NOT_APPLICABLE"
+    RECORDS_FOUND = "RECORDS_FOUND"
+    NO_RECORDS_FOUND = "NO_RECORDS_FOUND"
+    MORE_RECORDS_PENDING = "MORE_RECORDS_PENDING"
+
+
 class ClassificationModel(BaseModel):
-    clues: str
     reasoning: str
-    status: StatusModel
+    requestStatus: StatusModel
 
 
 class ClassifyRequestOutputModel(BaseModel):
     trackingNumber: str
     dateEstimate: str
     price: int
-    classification: ClassificationModel
+    recordsStatus: RecordsStatusModel
+    requestStatus: ClassificationModel
 
 
 # ===============================================
 # Below are helper types for better auto complete
 # ===============================================
+
+
+class SummarizeInputModel__Definition(typing.TypedDict):
+    text: FieldDefinition
+
+
+class SummarizeInputModel__InputVars:
+    def __init__(self, prefix: str = ""):
+        self.text = f"{{{prefix}text}}"
+        self.__val = f"{{{prefix}SummarizeInput.val}}"
+
+    def __str__(self):
+        return self.__val
+
+
+class SummarizeInputModel__OutputVars:
+    def __init__(self):
+        self.text = FieldVars(name="SummarizeInput.text")
+
+        self.json = "{" + "SummarizeInput.json}"
+
+    def __str__(self):
+        return self.json
+
+
+class SummarizeOutputModel__Definition(typing.TypedDict):
+    summary: FieldDefinition
+
+
+class SummarizeOutputModel__InputVars:
+    def __init__(self, prefix: str = ""):
+        self.summary = f"{{{prefix}summary}}"
+        self.__val = f"{{{prefix}SummarizeOutput.val}}"
+
+    def __str__(self):
+        return self.__val
+
+
+class SummarizeOutputModel__OutputVars:
+    def __init__(self):
+        self.summary = FieldVars(name="SummarizeOutput.summary")
+
+        self.json = "{" + "SummarizeOutput.json}"
+
+    def __str__(self):
+        return self.json
 
 
 class ClassifyRequestInputModel__Definition(typing.TypedDict):
@@ -65,13 +125,12 @@ class ClassifyRequestInputModel__OutputVars:
 
 
 class StatusCases__Definition(typing.TypedDict, total=False):
-    PROCESSED: FieldDefinition
-    FIX: FieldDefinition
-    PAYMENT: FieldDefinition
-    REJECTED: FieldDefinition
-    NO_DOCS: FieldDefinition
-    DONE: FieldDefinition
-    PARTIAL: FieldDefinition
+    IN_PROGRESS: FieldDefinition
+    FIX_REQUIRED: FieldDefinition
+    PAYMENT_REQUIRED: FieldDefinition
+    REQUEST_REJECTED: FieldDefinition
+    REQUEST_COMPLETED: FieldDefinition
+    PENDING_MORE_DOCS: FieldDefinition
     INDETERMINATE: FieldDefinition
 
 
@@ -99,17 +158,46 @@ class StatusModel__OutputVars(FieldVars):
         return self.cases
 
 
+class RecordsStatusCases__Definition(typing.TypedDict, total=False):
+    NOT_APPLICABLE: FieldDefinition
+    RECORDS_FOUND: FieldDefinition
+    NO_RECORDS_FOUND: FieldDefinition
+    MORE_RECORDS_PENDING: FieldDefinition
+
+
+class RecordsStatusModel__Definition(FieldDefinition):
+    case_name_formatter: typing.Callable[[str], str]
+    case_formatter: typing.Callable[[str, str], str]
+    cases: RecordsStatusCases__Definition
+
+
+class RecordsStatusModel__InputVars:
+    def __init__(self, prefix: str = ""):
+        self.val = f"{{{prefix}RecordsStatus.val}}"
+
+    def __str__(self):
+        return self.val
+
+
+class RecordsStatusModel__OutputVars(FieldVars):
+    def __init__(self):
+        super().__init__(name="RecordsStatus")
+        self.cases = "{" + "RecordsStatus.cases}"
+        self.case_names = "{" + "RecordsStatus.case_names}"
+
+    def __str__(self):
+        return self.cases
+
+
 class ClassificationModel__Definition(typing.TypedDict):
-    clues: FieldDefinition
     reasoning: FieldDefinition
-    status: StatusModel__Definition
+    requestStatus: StatusModel__Definition
 
 
 class ClassificationModel__InputVars:
     def __init__(self, prefix: str = ""):
-        self.clues = f"{{{prefix}clues}}"
         self.reasoning = f"{{{prefix}reasoning}}"
-        self.status = StatusModel__InputVars(prefix=f"{prefix}status.")
+        self.requestStatus = StatusModel__InputVars(prefix=f"{prefix}requestStatus.")
         self.__val = f"{{{prefix}Classification.val}}"
 
     def __str__(self):
@@ -118,9 +206,8 @@ class ClassificationModel__InputVars:
 
 class ClassificationModel__OutputVars:
     def __init__(self):
-        self.clues = FieldVars(name="Classification.clues")
         self.reasoning = FieldVars(name="Classification.reasoning")
-        self.status = FieldVars(name="Classification.status")
+        self.requestStatus = FieldVars(name="Classification.requestStatus")
 
         self.json = "{" + "Classification.json}"
 
@@ -132,7 +219,8 @@ class ClassifyRequestOutputModel__Definition(typing.TypedDict):
     trackingNumber: FieldDefinition
     dateEstimate: FieldDefinition
     price: FieldDefinition
-    classification: FieldDefinition
+    recordsStatus: RecordsStatusModel__Definition
+    requestStatus: FieldDefinition
 
 
 class ClassifyRequestOutputModel__InputVars:
@@ -140,8 +228,11 @@ class ClassifyRequestOutputModel__InputVars:
         self.trackingNumber = f"{{{prefix}trackingNumber}}"
         self.dateEstimate = f"{{{prefix}dateEstimate}}"
         self.price = f"{{{prefix}price}}"
-        self.classification = ClassificationModel__InputVars(
-            prefix=f"{prefix}classification."
+        self.recordsStatus = RecordsStatusModel__InputVars(
+            prefix=f"{prefix}recordsStatus."
+        )
+        self.requestStatus = ClassificationModel__InputVars(
+            prefix=f"{prefix}requestStatus."
         )
         self.__val = f"{{{prefix}ClassifyRequestOutput.val}}"
 
@@ -154,7 +245,8 @@ class ClassifyRequestOutputModel__OutputVars:
         self.trackingNumber = FieldVars(name="ClassifyRequestOutput.trackingNumber")
         self.dateEstimate = FieldVars(name="ClassifyRequestOutput.dateEstimate")
         self.price = FieldVars(name="ClassifyRequestOutput.price")
-        self.classification = FieldVars(name="ClassifyRequestOutput.classification")
+        self.recordsStatus = FieldVars(name="ClassifyRequestOutput.recordsStatus")
+        self.requestStatus = FieldVars(name="ClassifyRequestOutput.requestStatus")
 
         self.json = "{" + "ClassifyRequestOutput.json}"
 

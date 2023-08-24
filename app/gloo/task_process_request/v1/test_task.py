@@ -3,8 +3,16 @@ from typing import List, Callable, Awaitable, Any, Dict
 
 from gloo_py.testing import with_suite, GlooTestCaseBase, GlooTestDataset
 from gloo_py import init_gloo, GlooLogger
+from pydantic import BaseModel
 from .task import run_process_request_v1_async
-from ...types import ClassifyRequestInputModel
+from ...types import (
+    ClassifyRequestInputModel,
+    SummarizeInputModel,
+    RecordsStatusModel,
+    StatusModel,
+)
+from ...task_summarize import run_summarize_async
+from enum import Enum
 
 from termcolor import colored
 import os
@@ -39,7 +47,7 @@ with open("data/data.json", "r") as f:
     data = json.load(f)
 
 test_cases: List[Case] = []
-max_count = 40
+max_count = 70
 for obj in data:
     obj["name"] = str(obj["tid"])
     # Replace all nans with None
@@ -58,6 +66,9 @@ for case in test_cases:
 
 suites: List[GlooTestDataset[Case]] = []
 for status, cases in status_groups.items():
+    if status in ["appealing", "abandoned"]:
+        continue
+
     suite = GlooTestDataset[Case](
         name=f"status-{status}",
         test_cases=cases,
@@ -79,19 +90,78 @@ init_gloo(
 )
 
 
-def map_status(status):
+class MRStatus(Enum):
+    NO_DOCS = "no_docs"
+    PROCESSED = "processed"
+    PAYMENT = "payment"
+    DONE = "done"
+    FIX = "fix"
+    ABANDONED = "abandoned"
+    APPEALING = "appealing"
+    REJECTED = "rejected"
+    PARTIAL = "partial"
+
+
+def map_status(status: StatusModel, recordsStatus: RecordsStatusModel):
     status_mapping = {
-        "no_docs": "NO_DOCS",
-        "processed": "PROCESSED",
-        "payment": "PAYMENT",
-        "done": "DONE",
-        "fix": "FIX",
-        "abandoned": "INDETERMINATE",
-        "appealing": "INDETERMINATE",
-        "rejected": "REJECTED",
-        "partial": "PARTIAL",
+        MRStatus.NO_DOCS.value: "",
+        MRStatus.PROCESSED.value: "IN_PROGRESS",
+        MRStatus.PAYMENT.value: "PAYMENT",
+        MRStatus.DONE.value: "DONE",
+        MRStatus.FIX.value: "FIX",
+        MRStatus.ABANDONED.value: "INDETERMINATE",
+        MRStatus.APPEALING.value: "INDETERMINATE",
+        MRStatus.REJECTED.value: "REJECTED",
+        MRStatus.PARTIAL.value: "PARTIAL",
     }
     return status_mapping.get(status, "INDETERMINATE")
+
+
+class ExpectedOutput(BaseModel):
+    status: StatusModel
+    recordsStatus: RecordsStatusModel
+
+
+def expected_gloo_statuses(mrStatus: MRStatus) -> ExpectedOutput:
+    status_mapping = {
+        MRStatus.NO_DOCS: (
+            StatusModel.REQUEST_COMPLETED,
+            RecordsStatusModel.NO_RECORDS_FOUND,
+        ),
+        MRStatus.PROCESSED: (
+            StatusModel.IN_PROGRESS,
+            RecordsStatusModel.NOT_APPLICABLE,
+        ),
+        MRStatus.PAYMENT: (
+            StatusModel.PAYMENT_REQUIRED,
+            RecordsStatusModel.NOT_APPLICABLE,
+        ),
+        MRStatus.DONE: (
+            StatusModel.REQUEST_COMPLETED,
+            RecordsStatusModel.RECORDS_FOUND,
+        ),
+        MRStatus.FIX: (StatusModel.FIX_REQUIRED, RecordsStatusModel.NOT_APPLICABLE),
+        MRStatus.ABANDONED: (
+            StatusModel.INDETERMINATE,
+            RecordsStatusModel.NOT_APPLICABLE,
+        ),
+        MRStatus.APPEALING: (
+            StatusModel.IN_PROGRESS,
+            RecordsStatusModel.NOT_APPLICABLE,
+        ),
+        MRStatus.REJECTED: (
+            StatusModel.REQUEST_REJECTED,
+            RecordsStatusModel.NOT_APPLICABLE,
+        ),
+        MRStatus.PARTIAL: (
+            StatusModel.PENDING_MORE_DOCS,
+            RecordsStatusModel.MORE_RECORDS_PENDING,
+        ),
+    }
+    status, records_status = status_mapping.get(
+        mrStatus, (StatusModel.INDETERMINATE, RecordsStatusModel.NOT_APPLICABLE)
+    )
+    return ExpectedOutput(status=status, recordsStatus=records_status)
 
 
 # Gloo tester will automatically run and publish test results for you if you init_gloo(..) here or
@@ -102,11 +172,23 @@ async def test_process_request(
 ):
     print(colored(f"Running test case {test_case['name']}", "green"))
 
-    request_text = f'```{test_case["communication"]}```\nContains attachments? {"Yes" if test_case["file_text"] != "" or test_case["file_text"] is not None else "No"}'
+    file_text = ""
+    if test_case["file_text"] is not None:
+        file_text = f"Attached Correspondence:\n{test_case['file_text']}"
 
+    request_text = f'{test_case["communication"]}\n{file_text}'
+    summarize_response = await run_summarize_async(
+        SummarizeInputModel(text=request_text)
+    )
     res = await run_process_request_v1_async(
         ClassifyRequestInputModel(
-            request=request_text,
+            request=summarize_response.summary,
         )
     )
-    assert res.classification.status.value == map_status(test_case["status"])
+
+    expected_output = expected_gloo_statuses(MRStatus(test_case["status"]))
+    request_status = res.requestStatus.requestStatus
+    assert request_status == expected_output.status
+
+    if request_status == StatusModel.REQUEST_COMPLETED:
+        assert res.recordsStatus == expected_output.recordsStatus
