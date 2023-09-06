@@ -669,13 +669,13 @@ files = [
 
 [[package]]
 name = "gloo-lib"
-version = "1.1.11"
+version = "1.1.12"
 description = ""
 optional = false
 python-versions = ">=3.11,<4.0"
 files = [
-    {file = "gloo_lib-1.1.11-py3-none-any.whl", hash = "sha256:8f069326c0156f9d9f4be9af94fd228cd1f17d73b29b6a021e7cb3e8539b3672"},
-    {file = "gloo_lib-1.1.11.tar.gz", hash = "sha256:988debf471c8374afc134db3a4f247ed510636a9cdbc599c5d155dbd89c44533"},
+    {file = "gloo_lib-1.1.12-py3-none-any.whl", hash = "sha256:1bf9e4d6d6cef42c4d07b209f864b978f731fb94adc4d3736e3f68b8c8de2f04"},
+    {file = "gloo_lib-1.1.12.tar.gz", hash = "sha256:72e14b2c858aa913d956f1c2a078d42f8a2dc971bdf7b8ede0e1cc881dfef42b"},
 ]
 
 [package.dependencies]
@@ -2194,4 +2194,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "0cddfeab7a3ebf502596a5e7e19deb9d8f706f3713612f4e5dd46fee90c3d37e"
+content-hash = "1e2efa8d911fdf22d5d8d2eaaecc69145caaa5b4049715c374dafd2ffee67fba"
