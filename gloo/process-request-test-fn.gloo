@@ -26,24 +26,3 @@
     } 
   }
 }
-
-@test_group dataset1 for ProcessRequestTestWrapper {
-  
-  @case 123 {
-    @input {
-      FoiaTestCasePayload(
-        name="test",
-        tid=123,
-        cid=123,
-        username="test",
-        communication="test",
-        file_text="test",
-        status="test",
-        tracking_number="test",
-        date_estimate="test",
-        price=123.0
-      
-      )
-    }
-  }
-}

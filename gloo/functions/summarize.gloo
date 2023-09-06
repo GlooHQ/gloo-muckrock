@@ -1,10 +1,24 @@
 @function Summarize {
   @input string
-  @output string
+  @output SummarizeOutput
+}
+
+@class SummarizeOutput {
+  main_summary string
+  attachment_summary string?
+  important_dates string[]
+  pending_fees string?
+  next_steps string?
 }
 
 @variant[llm] v1 for Summarize { 
   @client[llm] GPT35Client
+  @stringify SummarizeOutput {
+    important_dates
+    @describe {
+      Sentences of text that mention important dates or deadlines for completing this FOIA Request
+    }
+  }
   @prompt {
     Extract data from the following TEXT that is a request for public records from a government agency.
 
@@ -22,6 +36,14 @@
     {@input}
     ###
 
-    Summary of agency's response:
+    Output format:
+    {@output.json}
+    
+    JSON:
   }
+}
+
+@test_group SummarizeTest for Summarize {
+  @input "Hello world"
+  
 }
