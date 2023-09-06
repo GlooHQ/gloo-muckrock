@@ -1,0 +1,87 @@
+@test_group status_partial for ProcessRequestTestWrapper {
+
+        @case 667936 {
+            @input {
+                FoiaTestCasePayload(
+                    name="667936",
+                    tid=667936,
+                    cid=1492077,
+                    username="Alpha",
+                    communication="""Good Morning,
+
+                Please see the attached response letter in regards to your Public Records Request under PC 832.7.  Below is a link to access these files electronically.  Please contact me if you have any issues accessing the records via the attached link.
+
+                Link: https://www.dropbox.com/scl/fo/ja2ro56236ooseex75xqt/h?dl=0&rlkey=axj0j6d6alrmzt2h5tswlafh3
+
+                Best Regards,
+                Carolyn Hawkins
+
+                [cid:image001.jpg@01D98969.EBAAA1E0]
+
+
+                This message may contain confidential information and is intended only for the individual named. If you are not the named addressee or if email content is defamatory, you should not disseminate, distribute or copy this e-mail. Please notify the sender immediately by e-mail if you have received this e-mail by mistake and delete this e-mail from your system. E-mail transmission cannot be guaranteed to be secured or error-free as information could be intercepted, corrupted, lost, destroyed, arrive late or incomplete, or contain viruses. The City of Barstow and/or its staff members therefore does not accept liability for any errors or omissions in the contents of this message, which arise as a result of e-mail transmission. Web: www.barstowca.org | Address: 220 East Mountain View Street, Barstow, CA 92311""",
+                    file_text="""BARSTOW POLICE DEPARTMENT
+                ANDREW ESPINOZA JR., CHIEF OF POLICE
+                220 E. Mountain View St., Barstow, CA 92311-2889
+                (760) 255-5111 * Fax (760) 256-2215
+                May 18, 2023
+                MuckRock News
+                Dept. MR 140409
+                263 Huntington Ave. 
+                Boston, MA 02115
+                140409-18047649@requests.muckrock.com
+                RE: Public Records Act Request under PC832.7 Dated February 13, 2023
+                The City of Barstow (the âCityâ) is currently processing your Public Records Act request received
+                February 21, 2023 regarding records subject to disclosure under Penal Code section 832.7.
+                Specifically, you requested:
+                1. INCIDENTS INVOLVING THE DISCHARGE OF A FIREARM: all incidents involving 
+                discharge of a firearm at a person by a peace officer.
+                2. USE OF FORCE RESULTING IN DEATH OR GREAT BODILY INJURY: all records 
+                relating to incidents where the use of force by a peace officer or custodial officer against a 
+                person resulted in great bodily injury or death.
+                3. SUSTAINED FINDINGS OF SEXUAL ASSAULT: all records of incidents where a 
+                sustained finding was made by any agency that a peace officer or custodial officer engaged 
+                in sexual assault involving a member of the public.
+                4. SUSTAINED FINDINGS OF DISHONESTY: all records relating to incidents where a 
+                sustained finding of dishonesty was made by any agency against a peace officer or 
+                custodial officer.
+                5. SUSTAINED FINDINGS OF UNREASONABLE OR EXCESSIVE FORCE: all reports 
+                of sustained findings involving a complaint that alleges unreasonable or excessive force.
+                6. SUSTAINED FINDING THAT AN OFFICER FAILED TO INTERVENE: all reports of 
+                sustained findings that an officer failed to intervene against another officer using force that 
+                is clearly unreasonable or excessive.
+                7. SUSTAINED FINDING OFFICER ENGAGED IN PREJUDICE OR 
+                DISCRIMINATION: all records relating to incidents where a sustained finding of 
+                prejudice or discrimination against a person on the basis of race, religious creed, color, 
+                national origin, ancestry, physical disability, mental disability, medical condition, genetic 
+                information, marital status, sex, gender identity, gender expression, age, sexual 
+                orientation, or military and veteran status.
+
+                8. SUSTAINED FINDINGS OF UNLAWFUL ARREST OR CONDUCTED UNLAWFUL 
+                SEARCH: all records relating to findings that a peace officer made an unlawful arrest or 
+                conducted and unlawful search.
+                Due to the voluminous nature of records that the City has to sort through for this request, the 
+                City intends to provide the responsive records on a rolling basis. We are releasing copies of the 
+                files we have compiled and redacted to date. I have attached an electronic copy of the following 
+                responsive records: IA-2020-008B. These records may be accessed in electronic form at the 
+                following link:
+                https://www.dropbox.com/scl/fo/ja2ro56236ooseex75xqt/h?dl=0&rlkey=axj0j6d6alrmzt2h5tswla
+                fh3
+                There are remaining files that are responsive to your request, which we are still in the process of 
+                compiling and redacting. We will forward those files to you as we complete them. We estimate 
+                the files will be ready for production by July 1, 2023. We will forward those files to you as we 
+                complete them. 
+                Should you have any questions, please do not hesitate to contact me at chawkins@barstowca.org
+                or 760-255-5138. 
+                Best Regards, 
+                Carolyn Hawkins
+                Barstow Police Department
+                City of Barstow""",
+                    status="partial",
+                    tracking_number="None",
+                    date_estimate="2023-05-15",
+                    price=None
+                )
+            }
+        }
+}

@@ -1,0 +1,49 @@
+@function ProcessRequestTestWrapper {
+  @input FoiaTestCasePayload
+  @output FOIARequestData
+}
+
+@class FoiaTestCasePayload {
+  name  string
+  tid   int
+  cid   int
+  username  string
+  communication string?
+  file_text string?
+  status string?
+  tracking_number string?
+  date_estimate string?
+  price float?
+}
+
+@variant[code] v1 for ProcessRequestTestWrapper {
+  @method impl {
+    @lang[py] {
+      async def impl(input: InputType) -> OutputType:
+        from app import process_request_test
+        res = await process_request_test(input)
+        return res
+    } 
+  }
+}
+
+@test_group dataset1 for ProcessRequestTestWrapper {
+  
+  @case 123 {
+    @input {
+      FoiaTestCasePayload(
+        name="test",
+        tid=123,
+        cid=123,
+        username="test",
+        communication="test",
+        file_text="test",
+        status="test",
+        tracking_number="test",
+        date_estimate="test",
+        price=123.0
+      
+      )
+    }
+  }
+}
