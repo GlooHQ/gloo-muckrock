@@ -12,7 +12,7 @@
 }
 
 @variant[llm] v1 for Summarize { 
-  @client[llm] GPT35Client
+  @client[llm] GPT35Client 
   @stringify SummarizeOutput {
     important_dates
     @describe {

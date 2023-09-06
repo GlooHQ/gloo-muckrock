@@ -4,9 +4,9 @@
 }
 
 @class FOIARequestData {
-  trackingNumber string
-  dateEstimate string
-  price int 
+  trackingNumber string?
+  dateEstimate string?
+  price int?
   reasoning string
   requestStatus RequestStatus
   recordsStatus RecordsStatus
@@ -96,10 +96,10 @@
   @prompt {
     You are analyzing public records correspondence to figure out what the status of the request for public records is. Your job is to extract the information from the government's response and classify the status of the request.
          
-    For the {@input.requestStatus} field, use the following definitions:
+    For the requestStatus field, use the following definitions:
     {@RequestStatus.values}
-
-    For the {@input.recordsStatus} field, use the following definitions:
+ 
+    For the recordsStatus field, use the following definitions:
     {@RecordsStatus.values}
 
     Agency's response to user:

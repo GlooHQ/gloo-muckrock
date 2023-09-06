@@ -93,7 +93,7 @@ async def process_request(input: str) -> FOIARequestData:
 
     extractedData = await ExtractRequestData(
         "v1",
-        summarize_response,
+        summarize_response.model_dump_json(),
     )
 
     return extractedData
