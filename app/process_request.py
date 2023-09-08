@@ -93,7 +93,7 @@ async def process_request(input: str) -> FOIARequestData:
 
     extractedData = await ExtractRequestData(
         "v1",
-        summarize_response.model_dump_json(),
+        summarize_response,
     )
 
     return extractedData
@@ -108,7 +108,7 @@ async def process_request(input: str) -> FOIARequestData:
 # @gloo_test annotation.
 async def process_request_test(test_case: FoiaTestCasePayload) -> FOIARequestData:
     file_text = ""
-    if test_case.file_text is not None:
+    if test_case.file_text is not None and test_case.file_text != "None":
         file_text = f"Attached Correspondence:\n{test_case.file_text}"
 
     request_text = f"{test_case.communication}\n{file_text}"

@@ -97,46 +97,8 @@
             }
         }
 
-        @case 667580 {
-            @input {
-                FoiaTestCasePayload(
-                    name="667580",
-                    tid=667580,
-                    cid=1491616,
-                    username="Alpha",
-                    communication="""DOI-OS-2017-000115 has been processed with the following final disposition: Other.""",
-                    file_text="""None""",
-                    status="rejected",
-                    tracking_number="OS-2017-00527",
-                    date_estimate="None",
-                    price=None
-                )
-            }
-        }
 
-        @case 668946 {
-            @input {
-                FoiaTestCasePayload(
-                    name="668946",
-                    tid=668946,
-                    cid=1495533,
-                    username="Alpha",
-                    communication="""Good afternoon,
 
-                A response to FOIA # 05863038 was sent to 142098-03362166@requests.muckrock.com<mailto:142098-03362166@requests.muckrock.com> on April 5th, 2023 at 2:33PM CST. Please see that e-mail for the FOIA response.
-
-                Respectfully,
-
-                Illinois State Police
-                FOIA Office""",
-                    file_text="""None""",
-                    status="rejected",
-                    tracking_number="05863038",
-                    date_estimate="2023-03-28",
-                    price=None
-                )
-            }
-        }
 
         @case 669304 {
             @input {
@@ -403,108 +365,9 @@
             }
         }
 
-        @case 667568 {
-            @input {
-                FoiaTestCasePayload(
-                    name="667568",
-                    tid=667568,
-                    cid=1491604,
-                    username="Alpha",
-                    communication="""DOI-OS-2017-000207 has been processed with the following final disposition: Other.""",
-                    file_text="""None""",
-                    status="rejected",
-                    tracking_number="OS-2017-00759",
-                    date_estimate="None",
-                    price=None
-                )
-            }
-        }
-
-        @case 669869 {
-            @input {
-                FoiaTestCasePayload(
-                    name="669869",
-                    tid=669869,
-                    cid=1497078,
-                    username="Alpha",
-                    communication="""This is an automated message from the DC Government FOIA system. Dear Emma Best, The status for your request is below. Please log into https://foia-dc.gov/palMain.aspx and go to Request Status. If you have any questions regarding the status of your request, please contact the agency\'s FOIA office that you had submitted your FOIA request to. You can communicate directly with the FOIA office by clicking on Inbox, search the request number, and then click Compose Message. OR, visit to see a list DC Government FOIA Office’s/officer’s contact information and have your Request ID ready. (https://dc.gov/node/818962) Contact FOIA Office Request status: Closed Request ID: 2020-FOIA-06542 Description: To Whom It May Concern:Pursuant to the DC Freedom of Information Act, I hereby request the following records:1. Documents mentioning, describing or generated in response to the BlueLeaks release, the preceding hack or subsequent fallout, including but not limited to:* Damage assessments* Emails* Interagency communications (local, state, or federal)* Communications with the press about BlueLeaks* Communications with Twitter or other social media or sharing platforms2. Documents mentioning or describing Distributed Denial of Secrets (DDoSecrets)You may limit this request to records generated between November 1, 2018 and the present.I am a member of the news media and request classification as such. I have previously written about the government and its activities, with some reaching over 100,000 readers in outlets such as Gizmodo, MuckRock, Motherboard, Property of the People, Unicorn Riot, and The Outline, among others. As such, as I have a reasonable expectation of publication and my editorial and writing skills are well established. In addition, I discuss and comment on the files online and make them available through non-profits such as the library Internet Archive and the journalist non-profit MuckRock, disseminating them to a large audience. While my research is not limited to this, a great deal of it, including this, focuses on the activities and attitudes of the government itself. As such, it is not necessary for me to demonstrate the relevance of this particular subject in advance.As my primary purpose is to inform about government activities by reporting on it and making the raw data available, I request that fees be waived.The requested documents will be made available to the general public, and this request is not being made for commercial purposes.In the event that there are fees, I would be grateful if you would inform me of the total charges in advance of fulfilling my request. I would prefer the request filled electronically, by e-mail attachment if available or CD-ROM if not.Thank you in advance for your anticipated cooperation in this matter. I look forward to receiving your response to this request within 15 business days, as the statute requires.Sincerely,Emma BestUpload documents directly: https://https://www.muckrock.comhttps://accounts.muckrock.com/accounts/login/?next=https%3A%2F%2Fwww.muckrock.com%2Faccounts%2Flogin%2F%3Fnext%3D%252Faccounts%252Fagency_login%252Fmetropolitan-police-department-385%252Fblueleaks-metropolitan-police-department-96897%252F%253Femail%253DFOIA.SystemAdmin%252540dc.gov&url_auth_token=AAAVLaR50UI9LAIrJLVbEMzyFG8%3A1jv6cL%3AuxCY87eJhiW3faMYKyl39g2td4o Regards, 
-                DC Government FOIA Portal""",
-                    file_text="""None""",
-                    status="rejected",
-                    tracking_number="2020-FOIA-06542",
-                    date_estimate="None",
-                    price=None
-                )
-            }
-        }
-
-        @case 669180 {
-            @input {
-                FoiaTestCasePayload(
-                    name="669180",
-                    tid=669180,
-                    cid=1496489,
-                    username="Alpha",
-                    communication="""Consistent with the language included in *all* FOIA responses from our
-                office, to the extent you consider any part of a response a denial, the
-                responsibility of the West Virginia Department of Homeland Security to
-                respond to your initial request is at an end.
-                If you feel information contained in the response is contrary to law, you
-                may institute an action for declaratory and/or injunctive relief in the
-                Circuit Court of the county in which you assert the records are kept,
-                subject to all jurisdictional procedural prerequisites, which are
-                specifically not waived.
-                Further, if you seek additional information, please send a new FOIA
-                request, as the responsibility of the West Virginia Department of Homeland
-                Security to respond to your initial request is at an end.
-
-                -- 
-
-                Brandolyn N. Felton-Ernest, Esq.
-
-                Deputy General Counsel
-
-                Department of Homeland Security
-
-                Office of the Cabinet Secretary
-
-                1900 Kanawha Blvd., East
-
-                Building 1, Suite 400-W
-
-                Charleston, WV  25305
-
-                Office Phone – (304) 558-2930
-
-                Direct Dial - (304) 205-6834
-
-                Mobile Phone – (304) 553-2698
-
-                Fax - (304) 558-6221
 
 
 
-                *CONFIDENTIAL: ATTORNEY - CLIENT PRIVILEGED COMMUNICATION*
-
-                * ***************************************************************************
-
-
-
-                The information contained in this electronic message is legally privileged
-                and confidential under applicable law and is intended for the use of the
-                individual/s or entity named above.  If the recipient of this message is
-                not the above-named recipient, you are hereby notified that any
-                dissemination, copy or  disclosure of this communication is strictly
-                prohibited.  If you have received this communication in error,  please
-                notify the sender at 304.558.2930.""",
-                    file_text="""None""",
-                    status="rejected",
-                    tracking_number="None",
-                    date_estimate="None",
-                    price=None
-                )
-            }
-        }
 
         @case 669182 {
             @input {
@@ -532,21 +395,29 @@
             }
         }
 
-        @case 669870 {
+
+        @case 667619 {
             @input {
                 FoiaTestCasePayload(
-                    name="669870",
-                    tid=669870,
-                    cid=1497079,
+                    name="667619",
+                    tid=667619,
+                    cid=1491663,
                     username="Alpha",
-                    communication="""This is an automated message from the DC Government FOIA system. Dear Emma Best, The status for your request is below. Please log into https://foia-dc.gov/palMain.aspx and go to Request Status. If you have any questions regarding the status of your request, please contact the agency\'s FOIA office that you had submitted your FOIA request to. You can communicate directly with the FOIA office by clicking on Inbox, search the request number, and then click Compose Message. OR, visit to see a list DC Government FOIA Office’s/officer’s contact information and have your Request ID ready. (https://dc.gov/node/818962) Contact FOIA Office Request status: Closed Request ID: 2020-FOIA-00182 Description: To Whom It May Concern:Pursuant to the Freedom of Information Act, I hereby request the following records:Records describing, authorizing or mentioning expenses or personnel assignments in response to or accommodation of visits from officials in the federal government between January 1, 2001 and the present.I am a member of the news media and request classification as such. I have previously written about the government and its activities, with some reaching over 100,000 readers in outlets such as Gizmodo, MuckRock, Motherboard, Property of the People, Unicorn Riot, and The Outline, among others. As such, as I have a reasonable expectation of publication and my editorial and writing skills are well established. In addition, I discuss and comment on the files online and make them available through non-profits such as the library Internet Archive and the journalist non-profit MuckRock, disseminating them to a large audience. While my research is not limited to this, a great deal of it, including this, focuses on the activities and attitudes of the government itself. As such, it is not necessary for me to demonstrate the relevance of this particular subject in advance.As my primary purpose is to inform about government activities by reporting on it and making the raw data available, I request that fees be waived.The requested documents will be made available to the general public, and this request is not being made for commercial purposes.In the event that there are fees, I would be grateful if you would inform me of the total charges in advance of fulfilling my request. I would prefer the request filled electronically, by e-mail attachment if available or CD-ROM if not.Thank you in advance for your anticipated cooperation in this matter. I look forward to receiving your response to this request within 20 business days, as the statute requires.Sincerely,Emma BestUpload documents directly: https://https://www.muckrock.comhttps://accounts.muckrock.com/accounts/login/?url_auth_token=AAAVLaR50UI9LAIrJLVbEMzyFG8%3A1iHVhS%3AFKzqQWraX87SUWL87WrASapU-BI&next=https%3A%2F%2Fwww.muckrock.com%2Faccounts%2Flogin%2F%3Fnext%3D%252Faccounts%252Fagency_login%252Fmetropolitan-police-department-385%252Fexpenditures-relating-to-visits-from-federal-officials-metropolitan-police-department-80492%252F%253Femail%253DFOIA.SystemAdmin%252540dc.gov Regards, 
-                DC Government FOIA Portal""",
+                    communication="""N. Peace Officer Standards and Training certification records
+                Georgia Peace Officer Standards and Training (POST) certification records
+                are subject to the Act\'s disclosure requirements after redaction of the
+                information cited above.35 However, the contents of POST applications,
+                except to the extent they include court proceedings, shall be considered as
+                confidential and shall be released only to the candidate or peace officer
+                to whom they pertain or to a law enforcement unit considering the candidate
+                or peace officer for employment.""",
                     file_text="""None""",
                     status="rejected",
-                    tracking_number="2020-FOIA-00182",
+                    tracking_number="None",
                     date_estimate="None",
                     price=None
                 )
             }
         }
+
 }

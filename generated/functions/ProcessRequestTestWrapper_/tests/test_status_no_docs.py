@@ -17,8 +17,6 @@ from ....custom_types import RequestStatus
 import typing
 import pytest
 
-pytest_plugins = ["gloo_py.testing.pytest_gloo"]
-
 InputType = typing.TypeVar('InputType', bound=FoiaTestCasePayload)
 OutputType = typing.TypeVar('OutputType', bound=FOIARequestData)
 
@@ -101,89 +99,6 @@ Office of Open Government""",
     file_text="""None""",
     status="no_docs",
     tracking_number="None",
-    date_estimate="None",
-    price=None
-)
-        await ProcessRequestTestWrapper(variant, arg)
-        
-        
-
-    async def test_668237(self, variant: VariantTypes) -> None:
-        arg = FoiaTestCasePayload(
-    name="668237",
-    tid=668237,
-    cid=1492609,
-    username="Alpha",
-    communication="""There are eFOIA files available for you to download.""",
-    file_text="""U.S. Department of Justice
-Federal Bureau of Investigation
-Washington, D.C. 20535
-May 18, 2023
-MUCKROCK NEWS
-DEPT MR145686
-263 HUNTINGTON AVENUE
-BOSTON, MA 02115
-FOIPA Request No.: 1592491-000
-Subject: 764
-Dear Mr. West:
-This acknowledges receipt of your Freedom of Information/Privacy Acts (FOIPA) request to the
-FBI. Below you will find check boxes and informational paragraphs about your request, as well as specific
-determinations required by these statutes. Please read each one carefully.
-Your request has been received at FBI Headquarters for processing.
-You submitted your request via the FBIâs eFOIPA system.
-Future correspondence about your FOIPA request will be provided in an email
-link unless the record file type is not supported by the eFOIPA system.
-Correspondence for requests regarding living individuals, or containing audio,
-video, and high resolution photographs cannot be sent through the eFOIPA
-system. Future correspondence about your FOIPA request will be delivered
-through standard mail.
-The subject of your request is currently being processed and documents subject to the
-FOIPA will be released to you upon completion.
-Release of responsive records subject to the FOIPA will be posted to the FBIâs electronic
-FOIA Library (The Vault), http:/vault.fbi.gov, and you will be contacted when the release is
-posted.
-Your request for a public interest fee waiver is under consideration and you will be advised
-of the decision if fees are applicable. If your fee waiver is not granted, you will be
-responsible for applicable fees per your designated requester fee category below.
-For the purpose of assessing any fees, we have determined:
-As a commercial use requester, you will be charged applicable search, review,
-and duplication fees in accordance with 5 USC Â§ 552 (a)(4)(A)(ii)(I).
-As an educational institution, noncommercial scientific institution or
-representative of the news media requester, you will be charged applicable
-duplication fees in accordance with 5 USC Â§ 552 (a)(4)(A)(ii)(II).
-As a general (all others) requester, you will be charged applicable search and
-duplication fees in accordance with 5 USC Â§ 552 (a)(4)(A)(ii)(III).
-
- Please check the status of your FOIPA request at www.vault.fbi.gov by clicking on \"Check Status of
-your FOI/PA Request.\" Status updates are adjusted weekly. The status of newly assigned requests may
-not be available until the next weekly update. If the FOIPA has been closed, the notice will indicate that
-appropriate correspondence has been mailed to the address on file.
-Additional information about the FOIPA can be found at www.fbi.gov/foia. Should you have
-questions regarding your request, please feel free to contact foipaquestions@fbi.gov. Please reference the
-FOIPA Request number listed above in all correspondence concerning your request.
-If you are not satisfied with the Federal Bureau of Investigationâs determination in response to this
-request, you may administratively appeal by writing to the Director, Office of Information Policy (OIP), United
-States Department of Justice, 441 G Street, NW, 6th Floor, Washington, D.C. 20530, or you may submit an
-appeal through OIP\'s FOIA STAR portal by creating an account following the instructions on OIPâs website:
-https://www.justice.gov/oip/submit-and-track-request-or-appeal. Your appeal must be postmarked or
-electronically transmitted within ninety (90) days of the date of this response to your request. If you submit
-your appeal by mail, both the letter and the envelope should be clearly marked \"Freedom of Information Act
-Appeal.\" Please cite the FOIPA Request Number assigned to your request so it may be easily identified.
-You may seek dispute resolution services by emailing the FBIâs FOIA Public Liaison at
-foipaquestions@fbi.gov. The subject heading should clearly state âDispute Resolution Services.â Please
-also cite the FOIPA Request Number assigned to your request so it may be easily identified. You may also
-contact the Office of Government Information Services (OGIS). The contact information for OGIS is as
-follows: Office of Government Information Services, National Archives and Records Administration, 8601
-Adelphi Road-OGIS, College Park, Maryland 20740-6001, e-mail at ogis@nara.gov; telephone at 202-741-
-5770; toll free at 1-877-684-6448; or facsimile at 202-741-5769.
-Sincerely,
-
-Joseph E. Bender, Jr.
-Acting Section Chief
-Record/Information Dissemination Section
-Information Management Division""",
-    status="no_docs",
-    tracking_number="1592491-000",
     date_estimate="None",
     price=None
 )
@@ -597,67 +512,6 @@ Chief, Administrative Appeals Staff""",
     status="no_docs",
     tracking_number="A-2023-01089",
     date_estimate="None",
-    price=None
-)
-        await ProcessRequestTestWrapper(variant, arg)
-        
-        
-
-    async def test_667335(self, variant: VariantTypes) -> None:
-        arg = FoiaTestCasePayload(
-    name="667335",
-    tid=667335,
-    cid=1490539,
-    username="Alpha",
-    communication="""Good Morning,
-
-Attached is a response to your request. If there are question, contact Central Records 615-862-7631.
-
-MNPD CENTRAL RECORDS DIV.
-811 Anderson Ln. Ste 100,
-Madison TN 37115
-ENO. 869601
-PRR 23-0085380""",
-    file_text="""John Cooper, Mayor
- John C. Drake
- Chief of Police
- 600 Murfreesboro Pike * P.O. Box 196399 * Nashville, TN 37219-6399 * Phone (615) 862-7400
-PUBLIC RECORD REQUEST RESPONSE FORM
-Governmental Entity Name and Address: MNPD Central Records Division 811 Anderson Lane, Suite 100 Madison, TN 37115
-Date: ______________________________ RE: __________________________________________________________________
-Requestorâs Name and Contact Information: ____________________________________________________________________
-In response to your records request received on ______________________our office is taking the action(s) indicated below:
- [Date Request Received]
-The public record(s) responsive to your request will be made available for inspection:
-Location: __________________________________________________
-Date & Time: _______________________________________________
-Copies of public record(s) responsive to your request are:
-Attached;
-Available for pickup at the following location: ______________________________________________________; or
-Being delivered via: USPS First-Class Mail Electronically Other: _________________________.
-Your request is denied on the following grounds:
-Your request was not sufficiently detailed to enable identification of the specific requested record(s).You need to
-provide additional information to identify the requested record(s).
-No such record(s) exists or this office does not maintain record(s) responsive to your request.
-No proof of Tennessee citizenship was presented with your request. Your request will be reconsidered upon
-presentation of an adequate form of identification.
-You are not a Tennessee citizen.
-You have not paid the estimated copying/production fees.
-The following state, federal, or other applicable law prohibits disclosure of the requested records:
-_______________________________________________________________________________________________.
-It is not practicable for the records you requested to be made promptly available for inspection and/or copying because:
-It has not yet been determined that records responsive to your request exist; or
-The office is still in the process of retrieving, reviewing, and/or redacting the requested records.
-The time reasonably necessary to produce the record(s) or information and/or to make a determination of a proper response to
-your request is: __________________________________________________.
-If you have any additional questions regarding your record request, please contact Public Records Request Coordinator.
-Sincerely,
-16 MAY 2023 Drake & SaferNashville MUCKROCK â
-â
-Central Records Division 615-862-7631 ENO 869601""",
-    status="no_docs",
-    tracking_number="None",
-    date_estimate="2023-06-09",
     price=None
 )
         await ProcessRequestTestWrapper(variant, arg)

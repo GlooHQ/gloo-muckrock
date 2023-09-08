@@ -6,7 +6,6 @@
 # flake8: noqa
 # pylint: skip-file
 # isort: skip_file
-from ...custom_types import SummarizeOutput
 from .variants import RunVariant_v1
 
 
@@ -14,7 +13,7 @@ import typing
 
 VariantTypes = typing.Literal['v1']
 
-async def Summarize(variant: VariantTypes, args: str) -> SummarizeOutput:
+async def Summarize(variant: VariantTypes, args: str) -> str:
 
     if variant == 'v1':
         return await RunVariant_v1(args)

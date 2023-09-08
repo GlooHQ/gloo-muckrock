@@ -9,7 +9,7 @@
 
 
 import typing
-from enum import StrEnum
+from enum import Enum
 from gloo_py.stringify import (
     StringifyBase,
     StringifyError,
@@ -30,7 +30,7 @@ from gloo_py.stringify import (
     StringifyCtx
 )
 
-class RequestStatus(StrEnum):
+class RequestStatus(str, Enum):
     FIX_REQUIRED = "FIX_REQUIRED"
     INDETERMINATE = "INDETERMINATE"
     IN_PROGRESS = "IN_PROGRESS"

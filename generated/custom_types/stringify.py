@@ -10,7 +10,6 @@ from .FOIARequestData_ import StringifyFOIARequestData
 from .FoiaTestCasePayload_ import StringifyFoiaTestCasePayload
 from .RecordsStatus_ import StringifyRecordsStatus
 from .RequestStatus_ import StringifyRequestStatus
-from .SummarizeOutput_ import StringifySummarizeOutput
 
 
 __all__ = [
@@ -18,5 +17,4 @@ __all__ = [
     'StringifyFoiaTestCasePayload',
     'StringifyRecordsStatus',
     'StringifyRequestStatus',
-    'StringifySummarizeOutput',
 ]

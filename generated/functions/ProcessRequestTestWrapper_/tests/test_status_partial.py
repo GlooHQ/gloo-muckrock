@@ -17,8 +17,6 @@ from ....custom_types import RequestStatus
 import typing
 import pytest
 
-pytest_plugins = ["gloo_py.testing.pytest_gloo"]
-
 InputType = typing.TypeVar('InputType', bound=FoiaTestCasePayload)
 OutputType = typing.TypeVar('OutputType', bound=FOIARequestData)
 

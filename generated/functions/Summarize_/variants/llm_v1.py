@@ -7,8 +7,6 @@
 # pylint: skip-file
 # isort: skip_file
 from ....clients import GPT35Client
-from ....custom_types import SummarizeOutput
-from ....custom_types.stringify import StringifySummarizeOutput
 
 
 import typing
@@ -51,18 +49,14 @@ Agency's response to the request:
 {@input}
 ###
 
-Output format:
-{@output.json}
-
-JSON:"""
+Summary of agency's response:"""
 
 stringifiers: typing.List[typing.Any] = []
-def gen_stringify() -> StringifyBase[SummarizeOutput]:
+def gen_stringify() -> StringifyBase[str]:
     with StringifyCtx():
-        stringify_SummarizeOutput = StringifySummarizeOutput(important_dates= StringifyRemappedField(describe='''Sentences of text that mention important dates or deadlines for completing this FOIA Request''',),)
-        stringifiers.append(stringify_SummarizeOutput)
-        OUTPUT_STRINGIFY = stringify_SummarizeOutput
-         
+        OUTPUT_STRINGIFY = StringifyString()
+        stringifiers.append(OUTPUT_STRINGIFY)
+        
         return OUTPUT_STRINGIFY
 
 OUTPUT_STRINGIFY = gen_stringify()
@@ -76,7 +70,7 @@ def custom_vars() -> typing.Dict[str, str]:
     return {}
 
 
-async def parser(raw_llm_output: str) -> SummarizeOutput:
+async def parser(raw_llm_output: str) -> str:
     return OUTPUT_STRINGIFY.parse(parser_middleware(raw_llm_output))
 
 async def prompt_vars(arg: str) -> typing.Dict[str, str]:
@@ -91,8 +85,8 @@ async def prompt_vars(arg: str) -> typing.Dict[str, str]:
     vars.update(**OUTPUT_STRINGIFY.vars())
     return vars
 
-Variantv1 = LLMVariant[str, SummarizeOutput](
+Variantv1 = LLMVariant[str, str](
     'Summarize', 'v1', prompt=prompt, client=GPT35Client, parser=parser, prompt_vars=prompt_vars)
 
-async def RunVariant_v1(arg: str) -> SummarizeOutput:
+async def RunVariant_v1(arg: str) -> str:
     return await Variantv1.run(arg)

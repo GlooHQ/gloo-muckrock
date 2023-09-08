@@ -85,36 +85,7 @@
             }
         }
 
-        @case 669879 {
-            @input {
-                FoiaTestCasePayload(
-                    name="669879",
-                    tid=669879,
-                    cid=1497372,
-                    username="Alpha",
-                    communication="""Kittitas County Public Records Portal 
- 
-                Dear Rose Terse, 
- 
-                Thank you for registering with the Kittitas County Public Records Portal. 
- 
-                Please log in to the Public Records Portal to update any contact or password information and to track the progress of your request. (https://u8387778.ct.sendgrid.net/ls/click?upn=6HtRfOYLt5fXvpttM-2FU1HZi67gglhxl5D9u2sjPTBAgnoEFw2g-2FVzaIg1J5Wt3gDhv1ByXoSainN9-2FgknvCUyw-3D-3DehWM_Jb140npIpBIqT-2BHzcXZ8p4TaDdeCmnqBj54APIegfPbCF7MFGs5FIr4U8R0FcKaVUT5OLXng4VTBbnfxAqSoCr-2FRYWFr3TbDKBkChF1GDW9RAWuufQC8wOcKPSrYM6HXjAwuOAm7wQ1r5OE7Es2vJZ7-2Fxuu-2F-2F0tB7rf-2FykQfWQp7p9XgyJ1GgdZzeoumFiZO-2Bk7TCKCWUS3uheDl-2BLhs3alGAvX4uYGa3eZNnVmSNE4-3D) 
- 
-                Your Login ID is:  146040-20590353@requests.muckrock.com 
- 
- 
-                If you have never used this system, your account has been created by a staff member.  You may request a temporary password to track the status of your request, manage account information, and retrieve responsive records here: Request Temporary Password (https://u8387778.ct.sendgrid.net/ls/click?upn=6HtRfOYLt5fXvpttM-2FU1HZi67gglhxl5D9u2sjPTBAgnoEFw2g-2FVzaIg1J5Wt3gDae98UOkzg78V4IwfWQAPidRq-2BTENRZ8bMsTpf3CQ6xs-3DKr52_Jb140npIpBIqT-2BHzcXZ8p4TaDdeCmnqBj54APIegfPbCF7MFGs5FIr4U8R0FcKaVUT5OLXng4VTBbnfxAqSoCsVD3-2FPIhVBzGcY6o02f1gIdMIVWhXlVjCFfuYvuJcqzKxQjdFbeSZpU3LmldqeodX4DGXcoRpPFh1dpTsXUpLxrenqtSFIvUf53jk-2BQE4i64plL48wi5yizhymG973WQBcNtbPYefgrQjhEEBQYbz4-3D) 
- 
-                Thank you, 
-                 Kittitas County This is an auto-generated email and has originated from an unmonitored email account. Please DO NOT REPLY""",
-                    file_text="""None""",
-                    status="processed",
-                    tracking_number="None",
-                    date_estimate="None",
-                    price=None
-                )
-            }
-        }
+
 
         @case 670174 {
             @input {
@@ -263,98 +234,11 @@
             }
         }
 
-        @case 668208 {
-            @input {
-                FoiaTestCasePayload(
-                    name="668208",
-                    tid=668208,
-                    cid=1492602,
-                    username="Alpha",
-                    communication="""Get Your USCIS Immigration Records Faster, Online   (https://first.uscis.gov/favicon.ico)  
- 
-                 Hello, 
-                 You recently requested information from us under the Freedom of Information Act (FOIA). 
-                 In response to COVID-19, we must temporarily reduce our capacity for processing paper FOIA requests and delivering records by mail. 
-                 We strongly recommend that you https://first.uscis.gov to receive a faster response and to help keep our workforce safe. (https://first.uscis.gov) 
-                Step 1: Create a USCIS account to receive information online 
-  
-                  * Visit the USCIS online account page at https://first.uscis.gov, and click \"Create an Account\". (https://first.uscis.gov) 
-                  * Set up your email address login, two-step verification, and the security question answers. 
-                  * Once you have fully logged in, select FIRST to find your FOIA request. 
- 
-                Step 2: Link Your Request to Your Online Account 
-  
-                  * After you login, click the \"View My Requests\" button. 
-                  * A message will appear, asking if you have a new request to register. Click \"Yes\". 
-                  * Enter the FOIA control number and PIN we mailed to you and click the \"Register Case\" button. 
-                  * Success! You will see your request on the \"My Requests\" page in your account. 
- 
-                Step 3: Use the My Requests Page 
-  
-                  * Now you can check the My Requests page to see the status of your request. 
-                  * We will notify you by email to check this page when the information you requested is ready. 
-                  * Once we post the information here, you can view or download anytime. 
- 
-                 Thanks for helping us provide you with a more efficient service! 
-                 USCIS 
-                If you have troubles logging into your account, please call the USCIS Contact Center toll-free at 800-375-5283. 
-                For people who are deaf, hard of hearing or have a speech disability: TTY 800-767-1833. 
 
-                THIS RESPONSE HAS BEEN AUTO GENERATED. PLEASE DO NOT REPLY TO THIS MESSAGE.""",
-                    file_text="""None""",
-                    status="processed",
-                    tracking_number="COW2018000831",
-                    date_estimate="None",
-                    price=None
-                )
-            }
-        }
 
-        @case 669516 {
-            @input {
-                FoiaTestCasePayload(
-                    name="669516",
-                    tid=669516,
-                    cid=1497034,
-                    username="Alpha",
-                    communication="""New ZixCorp secure email message from VCU Health Secure Email
 
-                To view the secure message, click on the link below or copy and paste the link into your Internet browser address bar.
 
-                https://vcuhealth-securemail.org/s/e?m=ABB3qMh6Fxhvqv4jq4d8KHUp&em=145498%2d17722302%40requests%2emuckrock%2ecom
 
-                You are reading the plaintext version of this message.  For a better user experience, change your email settings to enable the viewing of HTML.
-
-                Do not reply to this notification message; this message was auto-generated by the sender\'\'s security system. To reply to the sender, click on the link above.
-
-                The secure message expires on Jun 23, 2023 @ 12:44 PM (GMT).
-
-                Want to send and receive secure email messages transparently? http://www.zixcorp.com/info/zixmail_ZMC""",
-                    file_text="""None""",
-                    status="processed",
-                    tracking_number="None",
-                    date_estimate="2023-05-25",
-                    price=None
-                )
-            }
-        }
-
-        @case 669372 {
-            @input {
-                FoiaTestCasePayload(
-                    name="669372",
-                    tid=669372,
-                    cid=1496724,
-                    username="mlrobot",
-                    communication="""Your confirmation code is 109566""",
-                    file_text="""None""",
-                    status="processed",
-                    tracking_number="None",
-                    date_estimate="None",
-                    price=None
-                )
-            }
-        }
 
         @case 669320 {
             @input {
@@ -472,4 +356,117 @@
                 )
             }
         }
+
+        @case 669185 {
+            @input {
+                FoiaTestCasePayload(
+                    name="669185",
+                    tid=669185,
+                    cid=1496494,
+                    username="Alpha",
+                    communication="""Dear Matthew,
+
+                Per your request of May 22, 2023, I have updated your FOIA request, FOIA
+                tracking number *RD 77093*, to reflect that you narrowed your request to
+                FBI case file *100-MI-15812 *(I have also removed FBI case
+                file 100A-BA-25222 from your request). Since your request does not exceed
+                700 pages, I have reassigned it to our *first-tier processing queue*.
+                Taking into consideration our existing backlog, we *estimate* it will take*
+                39 months* to complete processing.
+
+                Records transferred to the custody of the National Archives are exempt from
+                the fee and fee waiver provisions of the Freedom of Information Act because
+                a fee schedule was in effect prior to enactment. The applicable section
+                states that “nothing in this subparagraph shall supersede fees chargeable
+                under a statute specifically providing for setting the level of fees for
+                particular types of records” (5 U.S.C. 552 (a)(4)(A)(vi)). The relevant fee
+                statute authorizes the National Archives “to charge a fee for making or
+                authenticating copies or reproductions of materials transferred to the
+                Archivist’s custody.” (44 U.S.C. 2116(c)). The inability to grant the
+                requested fee waiver does not constitute a denial under the terms of the
+                Freedom of Information Act.
+
+
+                In the future, someone from our office will contact you to inform you that
+                a line-by-line review of the case file has been completed. At that point,
+                you will have the option to order a copy for a fee of 80 cents per page or
+                view the record in-person.
+
+
+                If you visit the National Archives at College Park, Maryland, we will save
+                a digital surrogate of the original record (this will be the reviewed copy
+                that may include redactions) to a CD and you will be able to view the file*
+                at no cost*. If you need to use one of our public access computers you will
+                need to bring a universal serial bus (USB) drive so that you will be able
+                to download a copy. You also have the option of bringing your own personal
+                laptop that has a CD-Drive in order to copy the file(s) that way.
+
+
+                Sincerely,
+
+                REBECCA SHARP
+                Archivist
+                Special Access and FOIA Program (RF)
+                National Archives and Records Administration
+
+                8601 Adelphi Road
+
+                College Park, MD 20740-6001
+
+                (301) 837-0372
+
+                rebecca.sharp@nara.gov
+                www.archives.gov/research/foia/""",
+                    file_text="""None""",
+                    status="processed",
+                    tracking_number="23-F-0434",
+                    date_estimate="None",
+                    price=None
+                )
+            }
+        }
+
+        @case 669526 {
+            @input {
+                FoiaTestCasePayload(
+                    name="669526",
+                    tid=669526,
+                    cid=1497045,
+                    username="Alpha",
+                    communication="""Mr. Hoover,
+
+                Due to the size and number of custodians of your requests, as the coordinator I have been unable to determine the exact associated fees. Yet, I am submitting the below as estimated cost subject to be modified once all documentation has been compiled and submitted.
+
+                In accordance with Policy<chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https:/andersoncountytn.gov/wp-content/uploads/2021/11/Anderson-County-Public-Records-Policy.pdf> stated below and subject to your prior waiver of inspection of records, the cost associated with the electronic copies reimbursement of a thumb drive is $2.70 per drive. Additionally, the current associated cost for retrieving, redacting, etc. is $122, which is subject to increase based upon the remaining custodian’s submission of time spent compiling. If you request the thumb drive(s) be mailed to your Kingston Springs, TN address rather than retrieving in person, you are also required to cover the cost of shipping. Once the exact amount can be determined, I will notify a detailed cost amount. If electing to receive the data via United States Postal Service, we will mail the thumb drive(s) once the check payment has been received.
+
+                [cid:image005.jpg@01D98E20.CED9ACD0]
+                [cid:image007.jpg@01D98E20.CED9ACD0]
+
+                This Office is moving forward with your request and will contact you on or around May 30th to discuss the process you wish to move forward with in receiving your requested documentation.
+
+                Feel free to contact me if you have further questions or concerns before then.
+
+                Sincerely,
+                Kim
+
+                Kim Jeffers-Whitaker, SCP
+                Director of Human Resource & Risk Management
+                Anderson County Government
+                100 N Main St., Room 102
+                Clinton, TN 37716
+                Main Tel 865.264.6300<tel:865.264.6300>  |  Direct 865.264.6330<tel:865.264.6330>  |  Fax 865.264.6259<tel:865.264.6259>  |  Cell 865.363.6321
+                kwhitaker@andersoncountytn.gov<mailto:kwhitaker@andersoncountytn.govorg> | Website<https://andersoncountytn.gov/humanresources/> | Facebook<https://www.facebook.com/HRRMofACG/>
+
+                In every crisis, doubt or confusion, take the higher path - the path of compassion, courage ~ Amit Ray, Author
+
+                Confidentiality Note: The information contained in this e-mail transmission is privileged and confidential and is intended only for the recipient(s) named above. If the reader of this message is not the recipient(s) named above or an authorized agent of such recipient(s) responsible for delivering it to the intended recipient(s), you are hereby notified that you have received this e-mail in error, and that any review, dissemination, distribution, or copying of this transmission (including any attachments) is strictly prohibited. If you have received this e-mail in error, please notify the sender immediately by e-mail reply. Thank you!""",
+                    file_text="""None""",
+                    status="processed",
+                    tracking_number="None",
+                    date_estimate="2023-05-30",
+                    price=None
+                )
+            }
+        }
+
 }

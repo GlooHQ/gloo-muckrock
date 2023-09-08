@@ -9,7 +9,7 @@
 
 
 import typing
-from enum import StrEnum
+from enum import Enum
 from gloo_py.stringify import (
     StringifyBase,
     StringifyError,
@@ -30,7 +30,7 @@ from gloo_py.stringify import (
     StringifyCtx
 )
 
-class RecordsStatus(StrEnum):
+class RecordsStatus(str, Enum):
     MORE_RECORDS_PENDING = "MORE_RECORDS_PENDING"
     NOT_APPLICABLE = "NOT_APPLICABLE"
     NO_RECORDS_FOUND = "NO_RECORDS_FOUND"

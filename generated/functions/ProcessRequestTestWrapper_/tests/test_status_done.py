@@ -17,8 +17,6 @@ from ....custom_types import RequestStatus
 import typing
 import pytest
 
-pytest_plugins = ["gloo_py.testing.pytest_gloo"]
-
 InputType = typing.TypeVar('InputType', bound=FoiaTestCasePayload)
 OutputType = typing.TypeVar('OutputType', bound=FOIARequestData)
 
@@ -26,47 +24,6 @@ OutputType = typing.TypeVar('OutputType', bound=FOIARequestData)
 @pytest.mark.asyncio
 @pytest.mark.parametrize("variant", ['v1'])
 class Teststatus_done:
-
-    async def test_667723(self, variant: VariantTypes) -> None:
-        arg = FoiaTestCasePayload(
-    name="667723",
-    tid=667723,
-    cid=1491774,
-    username="Alpha",
-    communication="""Dear Lisa  Nagi,
-
-Thank you for registering with Cisco Secure Email Encryption Service.
-
-CONFIRM ACCOUNT
-Please activate this account by going to
-<https://res.cisco.com/websafe/activate?uuid=ebfe64fd000001882ca6818b0a089e87752813fe>
-
-To stop the registration process you can cancel this account by going to
-<https://res.cisco.com/websafe/cancelActivation?uuid=ebfe64fd000001882ca6818b0a089e87752813fe>
-
-IMPORTANT
-To help keep your personal information safe, Cisco recommends that
-you never give your Secure Email Encryption Service password to anyone, including
-Cisco employees.
-
-Welcome to Secure Email Encryption Service!
-
---------------------------------------------------------------------------------
-To know more about Cisco Secure Email Encryption Service, see https://res.cisco.com/websafe/about
-Terms of Service: https://res.cisco.com/websafe/termsOfService
-Privacy Policy: http://www.cisco.com/web/siteassets/legal/privacy.html
-
-Customer support: https://res.cisco.com/websafe/help?topic=ContactSupport
---------------------------------------------------------------------------------""",
-    file_text="""None""",
-    status="done",
-    tracking_number="None",
-    date_estimate="None",
-    price=None
-)
-        await ProcessRequestTestWrapper(variant, arg)
-        
-        
 
     async def test_670059(self, variant: VariantTypes) -> None:
         arg = FoiaTestCasePayload(
@@ -301,57 +258,6 @@ Passcode:
 
 Sent from my iPhone
 Please be CAREFUL when clicking links or opening attachments from external senders.""",
-    status="done",
-    tracking_number="None",
-    date_estimate="None",
-    price=None
-)
-        await ProcessRequestTestWrapper(variant, arg)
-        
-        
-
-    async def test_670056(self, variant: VariantTypes) -> None:
-        arg = FoiaTestCasePayload(
-    name="670056",
-    tid=670056,
-    cid=1497811,
-    username="Alpha",
-    communication="""Good morning,
-
-Attached are the records responsive to your request. Please see the letter for additional information.
-
-Kindly,
-
-[cid:image001.jpg@01D98EED.566D0940]
-Kaitlyn Sherer
-General Counsel\'s Office
-she/her/hers
-1919 Spanos Ct, Sacramento, CA 95825
-LOSRIOS.EDU<https://linkprotect.cudasvc.com/url?a=https%3a%2f%2flosrios.edu%2f&c=E,1,LfBS5uq0bpB0AMCIbcM-sQXzjAeoozaBG2fVABQR3-aEGYSQsxM2X8Rwf60T8l6lFlQiTgHSuT07w-TZq2CP20VqcdAGZ89Xkvb6vP0tCEgxMDUYX9PX6TC9&typo=1>""",
-    file_text="""May 23, 2023
-MuchRock News
-Dept MR 143840
-263 Huntington Ave.
-Boston, MA 02115
-143840-62594677@requests.muckrcok.com
-To Whom This May Concern:
-This letter is in response to your California Public Records Act request dated March 29, 2029
-(âRequestâ) and our initial response to you on April 25, 2023. In summary, your Request seeks:
-Payroll Records including the name, email, title, rate of pay, date of hire and job description
-from 1984-2022.
-The District has records available responsive to your request for the period of 2012-2021. As
-such, the District has identified, gathered, and is disclosing the documents attached to the
-email that accompanies this letter. The job descriptions are available online:https://
-employees.losrios.edu/human-resources-and-benefits/human-resources/job-descriptions-andï¿¾safety-analyses. The information you requested is not available for the 2022 year until after
-July 2023. Furthermore, in order to provide the information for 1984-2011, the District would
-need to construct a copy of the record which may include programming and computer
-services. The District will charge fees in accordance with the CPRA. If you would like these
-records, please let me know in writing and we will provide you with the timeframe it will take
-to get you those records.
-Sincerely,
-Jacob Knapp
-General Counsel
-Enclosures""",
     status="done",
     tracking_number="None",
     date_estimate="None",
@@ -9703,64 +9609,6 @@ Monulouscon S550 ng Fork Ste 0, Pesce comrs A 300% (68) 2269226""",
         
         
 
-    async def test_669037(self, variant: VariantTypes) -> None:
-        arg = FoiaTestCasePayload(
-    name="669037",
-    tid=669037,
-    cid=1495634,
-    username="Alpha",
-    communication="""Dear Jason Koebler,
-
-The Treasury FOIA Public Access Link has requested you to enter the following One Time Passcode in order to login to your account.
-
-One Time Passcode: 304316
-Regards,
-Department of Treasury""",
-    file_text="""None""",
-    status="done",
-    tracking_number="None",
-    date_estimate="None",
-    price=None
-)
-        await ProcessRequestTestWrapper(variant, arg)
-        
-        
-
-    async def test_668782(self, variant: VariantTypes) -> None:
-        arg = FoiaTestCasePayload(
-    name="668782",
-    tid=668782,
-    cid=1495357,
-    username="Alpha",
-    communication="""Hi Zachary,
-
-A new web browser just signed in to your Dropbox account. To help keep your account secure, let us know if this is you.
-
- Is this you?    Where: Near Atlanta, Georgia, United States  When: May 22, 2023 at 5:47 am (EDT)  What: Chrome on Windows    Yes[1] No[2]
-
-
-I\'m not sure[3]
-
-Learn more on how to protect your account[4] .
-
-Thanks,
-- The Dropbox Team
-
-
-[1]: https://www.dropbox.com/l/AAA4eEjuei_sOv_lT_67gUyQB5k1lwITlO4
-[2]: https://www.dropbox.com/l/AAANbcLlOyFY-zfT0lMTKfiiMFUqRT4XBrg
-[3]: https://www.dropbox.com/l/AABnf_AyvIL7oVnYaHkoQyNwJZ5j3N7QH-E
-[4]: https://www.dropbox.com/l/AACczWkEP1G2sW5tgQlInaTmZUWCOBBpJ7A/help/1973""",
-    file_text="""None""",
-    status="done",
-    tracking_number="2022-01058",
-    date_estimate="2023-05-09",
-    price=None
-)
-        await ProcessRequestTestWrapper(variant, arg)
-        
-        
-
     async def test_669686(self, variant: VariantTypes) -> None:
         arg = FoiaTestCasePayload(
     name="669686",
@@ -9786,6 +9634,31 @@ PRR 23-0083836""",
     status="done",
     tracking_number="None",
     date_estimate="2023-11-30",
+    price=None
+)
+        await ProcessRequestTestWrapper(variant, arg)
+        
+        
+
+    async def test_668821(self, variant: VariantTypes) -> None:
+        arg = FoiaTestCasePayload(
+    name="668821",
+    tid=668821,
+    cid=1495385,
+    username="Alpha",
+    communication="""Good Morning,
+
+Your request has been marked as closed / completed
+
+Thank you,
+
+PO Anthony Fabian #10063
+Chicago Police Department
+Office of Legal Affairs""",
+    file_text="""None""",
+    status="done",
+    tracking_number="P549586-121619",
+    date_estimate="2020-01-07",
     price=None
 )
         await ProcessRequestTestWrapper(variant, arg)

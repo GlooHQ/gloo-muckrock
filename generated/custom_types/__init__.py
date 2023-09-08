@@ -10,7 +10,6 @@ from .FOIARequestData_ import FOIARequestData
 from .FoiaTestCasePayload_ import FoiaTestCasePayload
 from .RecordsStatus_ import RecordsStatus
 from .RequestStatus_ import RequestStatus
-from .SummarizeOutput_ import SummarizeOutput
 
 
 __all__ = [
@@ -18,5 +17,4 @@ __all__ = [
     'FoiaTestCasePayload',
     'RecordsStatus',
     'RequestStatus',
-    'SummarizeOutput',
 ]
