@@ -120,4 +120,8 @@ async def process_request_test(test_case: FoiaTestCasePayload) -> FOIARequestDat
 
     if request_status == RequestStatus.REQUEST_COMPLETED:
         assert extracted_data.recordsStatus == expected_output.recordsStatus
+
+    # if test_case.tracking_number and test_case.tracking_number != "None":
+    #     assert extracted_data.trackingNumber == test_case.tracking_number
+
     return extracted_data
