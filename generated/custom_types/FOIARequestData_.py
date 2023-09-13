@@ -37,7 +37,8 @@ from gloo_py.stringify import (
 class FOIARequestData(BaseModel):
     trackingNumber: typing.Optional[str]
     dateEstimate: typing.Optional[str]
-    price: typing.Optional[int]
+    price: typing.Optional[float]
+    priceDetails: typing.Optional[str]
     reasoning: str
     requestStatus: RequestStatus
     recordsStatus: RecordsStatus
@@ -45,5 +46,5 @@ class FOIARequestData(BaseModel):
 
 class StringifyFOIARequestData(StringifyClass[FOIARequestData]):
     def __init__(self, **update_kwargs: StringifyRemappedField) -> None:
-        values: typing.Dict[str, FieldDescription[typing.Any]] = {"trackingNumber": FieldDescription(name="trackingNumber", description=None, type_desc=StringifyOptional(StringifyString())),"dateEstimate": FieldDescription(name="dateEstimate", description=None, type_desc=StringifyOptional(StringifyString())),"price": FieldDescription(name="price", description=None, type_desc=StringifyOptional(StringifyInt())),"reasoning": FieldDescription(name="reasoning", description=None, type_desc=StringifyString()),"requestStatus": FieldDescription(name="requestStatus", description=None, type_desc=StringifyRequestStatus()),"recordsStatus": FieldDescription(name="recordsStatus", description=None, type_desc=StringifyRecordsStatus()),}
+        values: typing.Dict[str, FieldDescription[typing.Any]] = {"trackingNumber": FieldDescription(name="trackingNumber", description=None, type_desc=StringifyOptional(StringifyString())),"dateEstimate": FieldDescription(name="dateEstimate", description=None, type_desc=StringifyOptional(StringifyString())),"price": FieldDescription(name="price", description=None, type_desc=StringifyOptional(StringifyFloat())),"priceDetails": FieldDescription(name="priceDetails", description=None, type_desc=StringifyOptional(StringifyString())),"reasoning": FieldDescription(name="reasoning", description=None, type_desc=StringifyString()),"requestStatus": FieldDescription(name="requestStatus", description=None, type_desc=StringifyRequestStatus()),"recordsStatus": FieldDescription(name="recordsStatus", description=None, type_desc=StringifyRecordsStatus()),}
         super().__init__(model=FOIARequestData, values=values, updates=update_kwargs)

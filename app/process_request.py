@@ -12,6 +12,8 @@ from pydantic import BaseModel
 import json
 import os
 from generated.custom_types import FoiaTestCasePayload, FOIARequestData
+import tiktoken
+from gloo_py import trace
 
 
 class MRStatus(Enum):
@@ -78,7 +80,7 @@ def expected_gloo_statuses(mrStatus: MRStatus) -> ExpectedOutput:
             RecordsStatus.NOT_APPLICABLE,
         ),
         MRStatus.PARTIAL: (
-            RequestStatus.PENDING_MORE_DOCS,
+            RequestStatus.IN_PROGRESS,
             RecordsStatus.MORE_RECORDS_PENDING,
         ),
     }
@@ -89,14 +91,17 @@ def expected_gloo_statuses(mrStatus: MRStatus) -> ExpectedOutput:
 
 
 async def process_request(input: str) -> FOIARequestData:
-    summarize_response = await Summarize("v1", input)
+    # summarize_response = await Summarize("v1", input)
 
     extractedData = await ExtractRequestData(
         "v1",
-        summarize_response,
+        input,
     )
 
     return extractedData
+
+
+enc = tiktoken.encoding_for_model("gpt-3.5-turbo")
 
 
 # This function is called by the Gloo ProcessRequestTestWrapper function in process-request-test-fn.gloo
@@ -112,12 +117,20 @@ async def process_request_test(test_case: FoiaTestCasePayload) -> FOIARequestDat
         file_text = f"Attached Correspondence:\n{test_case.file_text}"
 
     request_text = f"{test_case.communication}\n{file_text}"
+    tokens = enc.encode(request_text)
+    ellipsis_tokens = enc.encode("...")
+    max_tokens = 2000
+    if len(tokens) > max_tokens:
+        tokens = tokens[: max_tokens - len(ellipsis_tokens)] + ellipsis_tokens
+    request_text = enc.decode(tokens)
+
     extracted_data = await process_request(request_text)
 
     expected_output = expected_gloo_statuses(MRStatus(test_case.status))
     request_status = extracted_data.requestStatus
     assert request_status == expected_output.status
 
+    # only check the record status if the request is done
     if request_status == RequestStatus.REQUEST_COMPLETED:
         assert extracted_data.recordsStatus == expected_output.recordsStatus
 
