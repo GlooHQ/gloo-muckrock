@@ -7,7 +7,3 @@
 # pylint: skip-file
 # isort: skip_file
 
-
-from gloo_py import OpenAILLMClient, ENV
-
-GPT35Client = OpenAILLMClient(provider='openai', api_key=ENV.OPENAI_API_KEY, temperature=0, model='''gpt-3.5-turbo''')

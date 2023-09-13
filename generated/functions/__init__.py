@@ -7,12 +7,14 @@
 # pylint: skip-file
 # isort: skip_file
 from .ExtractRequestData_ import ExtractRequestData
+from .ProcessRequestMetadataTestWrapper_ import ProcessRequestMetadataTestWrapper
 from .ProcessRequestTestWrapper_ import ProcessRequestTestWrapper
 from .Summarize_ import Summarize
 
 
 __all__ = [
     'ExtractRequestData',
+    'ProcessRequestMetadataTestWrapper',
     'ProcessRequestTestWrapper',
     'Summarize',
 ]

@@ -420,4 +420,72 @@
             }
         }
 
+        @case 670208 {
+            @input {
+                FoiaTestCasePayload(
+                    name="670208",
+                    tid=670208,
+                    cid=1497995,
+                    username="Alpha",
+                    communication="""Dear MuckRock Requestor,
+
+                    Regrettably, the District will be unable to meet the May 28th, 2023,
+                    production deadline as previously anticipated. The District expects to
+                    provide the twelfth installment of records responsive to your November 3,
+                    2021, request on or before June 15th, 2023. We appreciate your
+                    understanding and apologize for the delay.
+
+                    Ruby Peters
+                    Public Records Officer
+                    Mercer Island School District
+                    206.236.3367
+
+
+                    *Confidentiality Notice:* This email (and any previous email messages or
+                    attachments thereto) is intended only for use by the addressee(s) named
+                    herein and may contain legally protected non-public, confidential, and/or
+                    privileged information intended for the sole use of the designated
+                    recipient(s). The unlawful interception, use of disclosure of such
+                    information is strictly prohibited under 18 U.S.C.§ 2511 and any applicable
+                    law. If you are not an intended recipient of this email, you are hereby
+                    notified that any dissemination, distribution or copying of this email (and
+                    any attachments thereto) is strictly prohibited. If you receive this email
+                    in error please immediately notify me at 206.23.3367
+                    and permanently delete the
+                    original email (and any copy of any email) and any printout thereof.""",
+                    file_text="""None""",
+                    status="processed",
+                    tracking_number="None",
+                    date_estimate="2023-06-15",
+                    price=None
+                )
+            }
+        }
+
+        @case 670125 {
+            @input {
+                FoiaTestCasePayload(
+                    name="670125",
+                    tid=670125,
+                    cid=1497915,
+                    username="Alpha",
+                    communication="""Good afternoon. I have received your request, and you may expect to hear from me by or before June 7, 2023.
+
+                    ----------------------------------------------------------------------------------
+                    Kathleen Hardy
+                    CYFD Records Custodian
+                    PO Drawer 5160
+                    Santa Fe, NM 87502-5160
+                    Text : 505-660-8508
+                    FAX: 505-827-4474
+                    Report suspected child abuse or neglect by calling #SAFE (#7233) from a cell phone or 1-855-333-SAFE.""",
+                    file_text="""None""",
+                    status="processed",
+                    tracking_number="None",
+                    date_estimate="2023-06-07",
+                    price=None
+                )
+            }
+        }
+
 }

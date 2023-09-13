@@ -10,4 +10,4 @@
 
 from gloo_py import OpenAILLMClient, ENV
 
-GPT4Client = OpenAILLMClient(provider='openai', model='''gpt-4''', api_key=ENV.OPENAI_API_KEY, temperature=0)
+GPT4Client = OpenAILLMClient(provider='openai', api_key=ENV.OPENAI_API_KEY, temperature=0, model='''gpt-4''')

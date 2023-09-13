@@ -6,8 +6,9 @@
 # flake8: noqa
 # pylint: skip-file
 # isort: skip_file
+from .code_v1 import RunVariant_v1
 
 
-from gloo_py import OpenAILLMClient, ENV
-
-GPT35Client = OpenAILLMClient(provider='openai', api_key=ENV.OPENAI_API_KEY, temperature=0, model='''gpt-3.5-turbo''')
+__all__ = [
+    'RunVariant_v1',
+]

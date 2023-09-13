@@ -134,7 +134,30 @@ async def process_request_test(test_case: FoiaTestCasePayload) -> FOIARequestDat
     if request_status == RequestStatus.REQUEST_COMPLETED:
         assert extracted_data.recordsStatus == expected_output.recordsStatus
 
-    # if test_case.tracking_number and test_case.tracking_number != "None":
-    #     assert extracted_data.trackingNumber == test_case.tracking_number
+    if test_case.price:
+        assert extracted_data.price == test_case.price
+
+    return extracted_data
+
+async def process_request_metadata_test(test_case: FoiaTestCasePayload) -> FOIARequestData:
+    file_text = ""
+    if test_case.file_text is not None and test_case.file_text != "None":
+        file_text = f"Attached Correspondence:\n{test_case.file_text}"
+
+    request_text = f"{test_case.communication}\n{file_text}"
+    tokens = enc.encode(request_text)
+    ellipsis_tokens = enc.encode("...")
+    max_tokens = 2000
+    if len(tokens) > max_tokens:
+        tokens = tokens[: max_tokens - len(ellipsis_tokens)] + ellipsis_tokens
+    request_text = enc.decode(tokens)
+
+    extracted_data = await process_request(request_text)
+
+    if test_case.tracking_number and test_case.tracking_number != "None":
+        assert extracted_data.trackingNumber == test_case.tracking_number
+
+    if test_case.date_estimate and test_case.date_estimate != "None":
+        assert extracted_data.dateEstimate == test_case.date_estimate
 
     return extracted_data
