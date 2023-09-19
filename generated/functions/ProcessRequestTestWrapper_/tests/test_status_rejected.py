@@ -114,273 +114,8 @@ undeliverable.
 
 2""",
     status="rejected",
-    tracking_number="None",
-    date_estimate="None",
-    price=None
-)
-        await ProcessRequestTestWrapper(variant, arg)
-        
-        
-
-    async def test_669304(self, variant: VariantTypes) -> None:
-        arg = FoiaTestCasePayload(
-    name="669304",
-    tid=669304,
-    cid=1496654,
-    username="Alpha",
-    communication="""Hello -
-
-Attached is the Final Agency Decision regarding your FOIA or Privacy Act Appeal with the Office of General Counsel, Information & Administrative Law Group.
-
-
-Please note, this email box it not monitored. If you are filing a new FOIA or Privacy Act Appeal, you can email it to: OGCFOIAAppeals@va.gov<mailto:OGCFOIAAppeals@va.gov>
-
-Thank you,
-
-U.S. Department of Veteran Affairs
-Office of General Counsel (024)
-Information & Administrative Law Group
-FOIA & Privacy Act Appeals
-[Logo  Description automatically generated]""",
-    file_text="""U.S. Department of Veterans Affairs
-Office of General Counsel
-Information and Administrative Law Group
-810 Vermont Avenue NW
-Washington DC 20420
-www.va.gov/ogc
-
- In Reply Refer To: 024L
-OGC Case #: 158825
-FOIA Request #: 22-02290-F
-May 23, 2023
-MuckRock News
-Attn: Mr. Ryan Thompson
-DEPT MR 122329
-411A Highland Avenue
-Somerville, MA 02144-25
-122329-06534997@requests.muckrock.com
-Dear Mr. Thompson:
-This is the final agency decision issued under the Freedom of Information Act
-(FOIA), 5 U.S.C. Â§ 552, in response to your appeal from the initial agency decision
-issued by the Department of Veterans Affairs (VA) Office of General Counsel (OGC).
-For the reasons outlined below, your appeal is denied.
-Procedural History
-Initial request On January 3, 2022, you submitted a FOIA request for the
-following information:
-Copies of any and all Settlement Agreement(s) of the
-Valentini v. Shinseki Federal Court Case(s) and its related
-Action(s), that were entered into by and between the
-Plaintiff(s) and Defendant(s) in that Case; wherever such
-Agreement(s) to any of the aforementioned Case(s) and
-Action(s) exist, if any.
-You provided background regarding your request, including that âValentini v. Shinseki
-is a Civil Rights Case filed in the Federal Court for the Central District of California in
-2011 under Case Number 2:11-cv-04846â and that VA is one of the Defendants in the
-case. You claimed that there is no settlement agreement entered or â[n]oticed to the
-Valentini Court and / or Entered upon itâs Docket(s)â despite a âFinal Judgment Order of
-February 17th, 2015 in That Case expressly Orders âShould this matter fail to resolve
-itself, the Court shall reinstate all previously issued order.ââ
-
-Fees VAâs FOIA regulations require each request to be characterized under 38
-C.F.R. Â§ 1.561(c) and fees to be estimated and charged, when applicable. Your request
-was characterized as a âNews Mediaâ requester. You were not charged any fees for the
-processing of this request.
-Search On January 6, 2022, OGC FOIA Officer Gregory Draves requested
-responsive records from the Real Property Law Group (RPLG), which is the practice
-group within OGC that worked on the Valentini litigation. The RPLG attorney assigned
-to the litigation searched Outlook for the terms âValentini settlementâ and âValentini v.
-Shinseki.â The search produced a copy of the 2015 settlement agreement and a
-restatement of the settlement agreement executed by the parties in 2017. The attorney
-also noted that the 2015 agreement is publicly available at the following address:
-https://www.westladraftmasterplan.org/documentation/extra-info.
-Initial Agency Decision (IAD) On January 11, 2021, Mr. Draves issued an IAD,
-notifying you that responsive records had been located. He identified two (2)
-documents, totaling seven (7) pages, as responsive to your request. He provided the
-two documents to you in their entirety. You were also provided with the appropriate
-appeal, mediation, and public liaison rights.
-Responsive Records The documents disclosed to you consisted of (1)
-Restatement of Settlement Agreement (dated January 12, 2017) â four (4) pages; and
-(2) Principles for a Partnership and Framework for Settlement By and Between the U.S.
-Department of Veterans Affairs (dated January 28, 2015) â three (3) pages.
-Appeal In a letter dated March 8, 2022, and received in our office on March 23,
-2022, you appealed the full grant IAD. You argued that the document dated January 28,
-2015, is not a settlement agreement because it âdoes not state nor stipulate anywhere
-therein, that it is the very Settlement Agreement to any Federal Action whatsoeverâ and
-it is âexpressly not enforceable in any court, about various expectations, between
-persons who were not Plaintiffs in Valentini v. Shinsekiâ¦â
-You also questioned the responsiveness of the document dated January 12,
-2017. You wrote that it refers to an agreement signed on January 28, 2015, and you
-claim that âno such referred-to agreement exists, unless it has never been Released to
-the Publicâ¦â You also write that even if it did exist, it is not a settlement agreement in
-Valentini v. Shinseki because the plaintiffs in Valentini v. Shineski âare not a private nonï¿¾profit corporation named Vets Advocacy.â You also claim that neither of the two
-signatories to the document, Ronald Olson and Ann Brown, are party to the Valentini v.
-Shineski litigation.
-You also claim that the two documents âdo not appear to be registered and
-accepted by the Valentini Court on the Federal Docket of that Action. In fact, the Case
-Record Notices, well after January 15, 2015 â that the actual parties to Valentini v.
-Shinseki purportedly intended to stipulate to settle in the future.â You also stated that âit
-
-appears the Plaintiffs in the Action were never present in session after they Prevailed,
-as in Won the Case, in Fall of 2013.â
-Relevant Law We have thoroughly reviewed your appeal under the provisions of the
-FOIA, which provides that federal agencies must disclose records requested unless
-they may be withheld in accordance with one or more of nine statutory exemptions. 5
-U.S.C. Â§ 552(b).
-Analysis You appear to question the adequacy of the records search and whether the
-documents provided to you are, in fact, the documents you requested. Mr. Draves
-contacted an OGC attorney with first-hand knowledge of the Valentini litigation, who
-searched for and located the two (2) settlement agreements. We believe the efforts
-taken to locate the documents you seek were sufficient to satisfy the duty of the
-Department under the FOIA to conduct a reasonable search.
-Furthermore, we have examined both documents and the docket history for Case
-No. 2:11-cv-04846 in the U.S. District Court for the Central District of California. Based
-on our careful review, we conclude that the two (2) documents are responsive to, and
-fulfill, your request. We address each of your arguments, below, in turn.
-You identify three (3) alleged issues with the January 28, 2015 (âJanuary 2015â)
-document. You state that it is not a settlement agreement because âit does not state or
-stipulate anywhere therein, that it is the very Settlement Agreement to any Federal
-Action whatsoeverâ¦â Please note that the preamble of the document states that it is
-between the VA and representatives of the plaintiffs in the Valentini case. Paragraph 5
-of the document also states that the parties will file a joint motion in the District Court
-âfor an indicative ruling that, in light of the partiesâ commitment to work as partners, the
-District court would vacate its judgment in Valentini v. McDonald . . . and coordinate to
-file additional pleadings . . . as well as pleadings necessary to effect a dismissal without
-prejudice of the entire actionâ¦â That the January 2015 document does not contain your
-preferred specific wording does not mean it is not a settlement agreement. You also
-take issue with the fact that Paragraph 14 of the document states that it is ânot intended
-to be enforceable in any courtâ¦â We note that lack of enforceability in court does not
-negate the fact that the January 2015 document is a settlement agreement, which
-ultimately resulted in the case being dismissed. Finally, you argue that the January 2015
-document is âbetween persons who were not Plaintiffsâ in the litigation. Please note that
-attorney Ronald Olson signed the agreement âon behalf of all plaintiffsâ and, as such, it
-was not necessary for each individual plaintiff to sign.
-We further direct your attention to the docket for Case No. 2:11-cv-04846 in the
-U.S. District Court for the Central District of California. As discussed in the January
-2015 document, Electronic Court Filing (ECF) 188 is a Notice of Motion and Joint Motion
-for Order for Indicative Ruling Pursuant to Fed. R. Civ. P. 62.1. The document states:
-âThe Plaintiffs and Government Defendants (the âmoving partiesâ) have recently reached
-agreement to work together in partnership to address these important challenges rather
-
-than continue this litigation.â ECF 196 is a Joint Stipulation to Dismiss Case, which
-states: âThe parties further stipulate that this dismissal shall be without prejudice, and
-that each party shall bear its own costs. The reasons for this dismissal have been set
-forth previously in the Joint Motion To Vacate Judgment Pursuant to Fed. R. Civ. P.
-60(b), ECF 193, as well as in the Joint Motion for Indicative Ruling Pursuant to Fed. R.
-Civ. P. 62.1, ECF 188, and have been addressed in the Courtâs orders granting the
-above-referenced motions. See Order, February 17, 2015, ECF 194; Order, February
-3, 2015, ECF 189.â If you have further questions regarding the January 2015 settlement
-agreement and the conclusion of the litigation, we suggest you review the
-aforementioned court filings.
-You also identified three (3) alleged issues with the January 12, 2017 (âJanuary
-2017â) document. You wrote that the January 2017 document references an agreement
-signed on January 28, 2015, that does not exist, unless it has never been publicly
-released. The referenced January 28, 2015, document is the previously discussed
-January 2015 settlement agreement that was disclosed to you. You also suggest that
-the January 2017 document is not a settlement in the Valentini case because the
-plaintiffs in Valentini âare not a private non-profit corporation named Vets Advocacy.â
-Per the January 2015 settlement, the Plaintiffsâ representatives formed a non-profit
-corporation âto help meet the objective and goalsâ of the January 2015 settlement. That
-non-profit is Vets Advocacy. You also claim that neither of the two (2) signatories to the
-document, Mr. Ronald Olson and Ms. Ann Brown, are party to the Valentini litigation.
-Mr. Olson, who signed the January 2015 agreement on behalf of all plaintiffs, signed
-the January 2017 agreement as a representative of Vets Advocacy, where he serves
-on the Board of Directors. Ms. Brown signed the agreement in her capacity as the VA
-Medical Center Director, on behalf of the VA, who was a party to the litigation.
-We would also like to direct your attention to publicly available information
-regarding the settlement and the Valentini litigation. As the RPLG attorney noted,
-settlement information is available on the VA Greater Los Angeles Healthcare System
-Draft Master Plan website. See https://www.westladraftmasterplan.org/. On the âAboutâ
-page, the timeline includes a link to the Valentini v. McDonald settlement in the â1st
-Quarter 2015.â See https://www.westladraftmasterplan.org/about. The site describes
-the settlement as follows: âOn January 28, 2015, former VA Secretary Robert McDonald
-settled a class action lawsuit against the Department of Veterans Affairs alleging VA
-was mismanaging the West LA Campus, by allowing commercial uses of land versus
-using the land to support and care for our nationâs Veterans. VA and representatives of
-the plaintiffs pledged to work together as partners to end veteran homelessness in the
-Greater Los Angeles area.â On the âLibraryâ page, under âSource & Update Documentsâ
-and then âBackground Information,â there are links to both âSettlement Agreement â
-2015â and âRestatement of Settlement Agreement â 2017â for download. See
-https://www.westladraftmasterplan.org/documentation/extra-info. They are the same
-documents that were disclosed to you.
-
-Additionally, the Vets Advocacy website states that it is a ânon-profit organization
-facilitating revitalization of the U.S. Department of Veterans Affairs West Los Angeles
-campus as a condition of the Valentini v. Shinseki settlement.â See
-https://www.vatherightway.org/vets-advocacy/. On that same website, when you click
-on âSettlement Agreementâ on the timeline for January 2015, the following description
-appears: âVA Secretary Bob McDonald and Plaintiff Partners sign the âPrinciples for
-Partnership and Framework for Settlementâ agreement which called for the creation of
-a veterans homelessness strategy, mutual cooperation in the development of a Master
-Plan to set out the most effective use of the campus for veterans, development of an
-exit strategy for leases not pertaining to veteran healthcare or housing and the creation
-of a non-profit entity (Vets Advocacy) to assist in such efforts. Both parties also agreed
-to file a joint motion to the District Court that would vacate its judgment in Valentini v.
-McDonald.â A link to the January 28, 2015, document is also available.
-Conclusion Based upon the foregoing, your appeal is denied.
-Mediation and Appeal Rights This final agency decision concludes the
-administrative processing of your appeal.
-As part of the 2007 FOIA amendments, the Office of Government Information
-Services (OGIS) was created to offer mediation services. Similarly, as part of the FOIA
-Improvement Act of 2016, VA established a FOIA Public Liaison to offer mediation
-services. Both OGIS and the VA Public Liaison will assist in resolving disputes between
-FOIA requesters and VA as a non-exclusive alternative to litigation. Using OGIS or the
-VA FOIA Public Liaison does not affect your right to pursue litigation. You may contact
-OGIS or the VA Public Liaison in any of the following ways:
-Office of Government Information Services E-mail: ogis@nara.gov
-National Archives and Records Administration Telephone: 202-741-5770
-Room 2510 Facsimile: 202-741-5769
-8601 Adelphi Road Toll-free: 1-877-684-6448
-College Park, MD 20740-6001
-VA FOIA Public Liaison E-mail: vacofoiaservice@va.gov
-James Killens III Telephone: 1-877-750-3642
-VA FOIA Service Facsimile: 202-632-7581
-810 Vermont Avenue, NW (005R1C)
-Washington, DC 20420
-
-With respect to any information denied to you by this final agency decision, the
-FOIA requires us to advise you that if you believe the Department erred in this decision,
-you have the right to file a complaint in an appropriate United States District Court.
- Sincerely,
-
- Deputy Chief Counsel
- Office of General Counsel,
- Information and Administrative Law
- Group (IALG)
-CC: Gregory Draves, FOIA Officer, OGC
-Michael Sarich, VA FOIA Service Director
-VACO FOIA Service""",
-    status="rejected",
-    tracking_number="22-02290-F",
-    date_estimate="None",
-    price=None
-)
-        await ProcessRequestTestWrapper(variant, arg)
-        
-        
-
-    async def test_667950(self, variant: VariantTypes) -> None:
-        arg = FoiaTestCasePayload(
-    name="667950",
-    tid=667950,
-    cid=1492088,
-    username="Alpha",
-    communication="""Mr. Feathers:
-
-You missed the deadline to appeal our response sent on December 14, 2022.
-We now consider the matter closed.
-
-Respectfully,
-
-*Ron Smith*
-Controller & Records Officer
-*Weber State University*
-*3850 Dixon Parkway, Dept 1014*
-*Ogden, UT  84408-1014*
-*801 626-6613*""",
-    file_text="""None""",
-    status="rejected",
-    tracking_number="None",
-    date_estimate="None",
+    tracking_number=None,
+    date_estimate=None,
     price=None
 )
         await ProcessRequestTestWrapper(variant, arg)
@@ -403,102 +138,508 @@ Sgt. McCaskill
 mmccaskill@fullertonpd.org
 714-738-5336
 To monitor the progress or update this request please log into the Fullerton Public Records Center (https://u8387778.ct.sendgrid.net/ls/click?upn=6HtRfOYLt5fXvpttM-2FU1HVfFXt3IhMDjzgmztLHrVQFWo4PAXpZQEd-2FHNJDoaUtVoGYX4FKLQzR5NxqtYrySncUdSmv7SRpS7rkkpdUkvWs-3DMfzU_P2CsNFfhZzmd360sZf2N1ukIfJpDpGVkp3fbym2QZgY94q-2Bggjpv4s0tzXvEwX7WrygvnLaWkRet9yYjdWfAWen56IukJeYGxTmqDRT4HwouEqR74vgLFFeoMzXgAWhkowLVC7ZDJylYNHv0vynXpQZ8LvYWeA-2FHtd-2FjL0TgJNf6a2QJNGBnhJY08uBnpq8YTe4pkr3T5Fv0-2B9Nni04e7-2B8QPvhEdvo4RJm2Zxl7MAA-3D)""",
-    file_text="""None""",
+    file_text="",
     status="rejected",
     tracking_number="R000061-012323",
-    date_estimate="None",
+    date_estimate=None,
     price=None
 )
         await ProcessRequestTestWrapper(variant, arg)
         
         
 
-    async def test_667619(self, variant: VariantTypes) -> None:
+    async def test_669781(self, variant: VariantTypes) -> None:
         arg = FoiaTestCasePayload(
-    name="667619",
-    tid=667619,
-    cid=1491663,
+    name="669781",
+    tid=669781,
+    cid=1497443,
     username="Alpha",
-    communication="""N. Peace Officer Standards and Training certification records
-Georgia Peace Officer Standards and Training (POST) certification records
-are subject to the Act\'s disclosure requirements after redaction of the
-information cited above.35 However, the contents of POST applications,
-except to the extent they include court proceedings, shall be considered as
-confidential and shall be released only to the candidate or peace officer
-to whom they pertain or to a law enforcement unit considering the candidate
-or peace officer for employment.""",
-    file_text="""None""",
+    communication="""""",
+    file_text="""Us. Department of Justice:
+    8 Federal Bureau of Investigation
+    Washington, D.C. 20535
+    May 5.2028
+    MUCKROCK NEWS
+    DEPT MR145051
+    263 HUNTINGTON AVENUE
+    BOSTON, MA 02115.
+    FOIPA Request No.: NFP-149642
+    Subject: Survellance and investigation of
+    Puerto Rican Environmental Actvists
+    Dear Carlos Polanco,
+
+    This sn response to your Freedom of IformatioPrivacy Acts (FOIPA) request.
+
+    The FOIPA provide for access to Goverment ecords where th records sought are âreasonably
+    described Title 5, United States Code, Section 552(a))(A). Your eter does not contain enough
+    descriptive information o permit a search of ou records. Therefore. you request is being administratively
+    closed. In accordance wih Tile 20, Code of Federal Regulations, Par 16.3). lease provide us more
+    Specific information
+
+    Examples of specifc information which could assist n locating potentaly responsive records within
+    a reasonable amount of efrt are as follows:
+
+    Â«Â© indviduals
+    Â© Compete name
+    Â© bin date
+    5 Place of bith
+    Place of death
+    Dae of dealn
+    Date and locaton of incident
+    + Organizations or Events
+    Date of event
+    5 Time frame
+    5 Location
+    For questions on how o reasonably describe your reques, please email us at
+    folpaquesiions@i gov. Please reference the FOIPA Request number listed above in all corespondence
+    conceming your request. Additonal normation about tha FOIPA can be ound ats. fo Gou0a
+
+    Ifyou are no satisfied with the Federal Bureau of Investigations determination in response fo this
+
+    request, you may administratively appeal by wring to he Director. Office of Information Policy (OIP). United
+    States Department of Jusice, 441 G Sireet, NW, 6th Foor, Washingon. D.C. 20530, or you may submit an
+
+    appeal through OIP's FOIA STAR poral by creaiing an account follwing the instnucions on OIF's webs:
+    its: ustice Goviop/submitand-rac.request.or-apoeal. Your appeal must be postmarked or
+    electronically transmited within niney (90) days of the date of is response to your request. Ifyou submit
+    your appeal by mal both he letter and the envelope should be early marked âFreedom o Information Act
+    Appeal Please cie the FOIPA Roques! Number assigned 1 your 0quest sot may be easily dented.
+    
+
+    You my sok ts esction sacs by amas te FB FOI Puc aan
+    foipaguestions@Â®i gov. The subject heading should clearly state âDispute Resolution Services.â Please
+    i oI Rous ama: te yo sat nt i as i od hy 0
+    Coach Ofc of Govsmmrs mation Sovess (O55) Th arta moason or OOS
+    ons Oc Comma maton Seo koa res snd Soca amisasovn 501
+    Adelphi Road-OGIS, College Park, Maryland 20740-6001, e-mail at ogis@nara gov: telephone at 202-741
+    ST ok Te a7 S048 ot ame 208 TRYST
+
+    Soca
+
+    > Â£Cml
+
+    aon onde,
+
+    Ho Sohn cot
+
+    Ree maionDsseminsion Scion
+    ommion anager oie
+    """,
     status="rejected",
-    tracking_number="None",
-    date_estimate="None",
+    tracking_number="NFP-149642",
+    date_estimate=None,
     price=None
 )
         await ProcessRequestTestWrapper(variant, arg)
         
         
 
-    async def test_670208(self, variant: VariantTypes) -> None:
+    async def test_669757(self, variant: VariantTypes) -> None:
         arg = FoiaTestCasePayload(
-    name="670208",
-    tid=670208,
-    cid=1497995,
+    name="669757",
+    tid=669757,
+    cid=1497419,
     username="Alpha",
-    communication="""Dear MuckRock Requestor,
+    communication="""""",
+    file_text="""DEIDRE L. LUKER, P.A.
+    ATTORNEY AT LAW
 
-    Regrettably, the District will be unable to meet the May 28th, 2023,
-    production deadline as previously anticipated. The District expects to
-    provide the twelfth installment of records responsive to your November 3,
-    2021, request on or before June 15th, 2023. We appreciate your
-    understanding and apologize for the delay.
+    312W. Main Street Phone: (479) 967-5100
 
-    Ruby Peters
-    Public Records Officer
-    Mercer Island School District
-    206.236.3367
+    Russellville, Arkansas 72801 Fax. (479) 890-6957
+    deidre@rasselivileattorneys com
 
+    April 25,2023
 
-    *Confidentiality Notice:* This email (and any previous email messages or
-    attachments thereto) is intended only for use by the addressee(s) named
-    herein and may contain legally protected non-public, confidential, and/or
-    privileged information intended for the sole use of the designated
-    recipient(s). The unlawful interception, use of disclosure of such
-    information is strictly prohibited under 18 U.S.C.§ 2511 and any applicable
-    law. If you are not an intended recipient of this email, you are hereby
-    notified that any dissemination, distribution or copying of this email (and
-    any attachments thereto) is strictly prohibited. If you receive this email
-    in error please immediately notify me at 206.23.3367
-    and permanently delete the
-    original email (and any copy of any email) and any printout thereof.""",
-    file_text="""None""",
-    status="processed",
-    tracking_number="None",
-    date_estimate="2023-06-15",
+    Aaron Gordon
+
+    MuckRock News
+
+    Dept. MR 108957
+
+    263 Huntington Ave.
+
+    Boston, MA 02115
+
+    Re: FOIA request
+
+    Mr. Gordon:
+
+    1am the attorney for Pope County, Arkansas. Iam in receipt of a Freedom of Information Act
+
+    request that you sent dated April 20, 2023.
+
+    Please be advised that pursuant ACA. 25-19-105, the Pope County Sheriffs Office is not
+
+    required to respond to requests for information from an out-of-state requestor such as
+
+    yourself. Therefore, you will not be receiving response to your Freedom of Information Act
+
+    request.
+
+    You have sent this same request on numerous occasions, and | have previously provided the
+
+    same response to your FOIA requests. So long as you remain an out-of-state requestor, my
+
+    reply to you that you will not be receiving a response to your FOIA request from the Pope
+
+    County Sheriffs Office will continue to be the same whether you send another request
+
+    tomorrow, next month, or next year. Simply sending an identical request each month, which
+
+    has already been declined, will not yield different results. | highly recommend that you
+
+    consult the Arkansas Freedom of Information Act handbook on the Arkansas Attorney
+
+    General website if you have any questions.
+
+    Sincerely;
+
+    duc
+
+    Deidre Luker
+
+    ce: Rowdy Sweet via email Rowdy.Sweet@popecountyar gov
+
+    Sherriff Shane Jones via email Shane Jones@popecountyar.gov
+    """,
+    status="rejected",
+    tracking_number=None,
+    date_estimate=None,
     price=None
 )
         await ProcessRequestTestWrapper(variant, arg)
         
         
 
-    async def test_670125(self, variant: VariantTypes) -> None:
+    async def test_669720(self, variant: VariantTypes) -> None:
         arg = FoiaTestCasePayload(
-    name="670125",
-    tid=670125,
-    cid=1497915,
+    name="669720",
+    tid=669720,
+    cid=1497375,
     username="Alpha",
-    communication="""Good afternoon. I have received your request, and you may expect to hear from me by or before June 7, 2023.
+    communication="""Good evening,
 
-    ----------------------------------------------------------------------------------
-    Kathleen Hardy
-    CYFD Records Custodian
-    PO Drawer 5160
-    Santa Fe, NM 87502-5160
-    Text : 505-660-8508
-    FAX: 505-827-4474
-    Report suspected child abuse or neglect by calling #SAFE (#7233) from a cell phone or 1-855-333-SAFE.""",
-    file_text="""None""",
-    status="processed",
-    tracking_number="None",
-    date_estimate="2023-06-07",
+    Please see the attached determination letter regarding your FOIL request.
+
+    Regards,
+
+    Madeleine Guilmain
+    Assistant District Attorney
+    Records Access Officer
+
+
+
+
+    This email communication and any files transmitted with it contain privileged and confidential information from the New York County District Attorney's Office and are intended solely for the use of the individuals or entity to whom it has been addressed. If you are not the intended recipient, you are hereby notified that any dissemination or copying of this email is strictly prohibited. If you have received this email in error, please delete it and notify the sender by return email.
+    """,
+    file_text="""ALVIN L. BRAGG, JR. DISTRICT ATTORNEY
+    DISTRICT ATTORNEY
+    COUNTY OF NEW YORK
+    ONE HOGAN PLACE
+    New York, N. Y.10013
+    (212) 335-9000
+    May 24, 2023
+    [VIA EMAIL: 144 729-70387279@requests.muckrock.com]
+    Caroline Haskins
+    Business Insider
+    Re: FOIL Request Dated April 19, 2023
+    To Caroline Haskins:
+    The New York County District Attorney's Office has received your Freedom
+    of Information Law ("FOIL") request seeking records of e-mailed threats to this
+    Office or its employees from March 17, 2003 to the present with regard to the
+    ongoing criminal case against Donald Trump, and communications with other law
+    enforcement agencies regarding coordinating security for this Office in light of such
+    threats. Although you reference the fact that this Office has publicly acknowledged
+    that it has received numerous threats since March 17, 2023, we have not released
+    copies of the actual threats themselves. Your FOIL request is therefore denied for
+    the following reasons:
+    First, your request is denied on the ground that disclosure of the records you
+    seek would pose a risk to the safety of the staff at this office as well as members of
+    the general public who visit this office. Public Officers Law ("POL")Â§ 87(2)(Â£)
+    exempts from disclosure records that, "if disclosed, could endanger the life or safety
+    of any person." POL Â§ 87 (2)(Â£); In re Digital Forensics Unit v. New York City Police
+    Department, 2023 N.Y. App. Div. LEXIS 1506 *2; 2023 N.Y. Slip Op. 01476 (1st
+    Dept. 2023); Matter of Bellamy v. New York Czry Police Department, 87 A.D.3d 874,875
+    (1st Dept. 2011); Matter of Prisoners' Legal Servs. OJNY v. New York State Dept. of Corr.
+    & Community Supervision, 209 A.D.3d 1208, 1211-12 (3d Dept. 2022). Public disclosure
+    of the communications between this Office and other law enforcement agencies
+    regarding the response to threats made to this Office and its employees-as well as
+    copies of the threats themselves-would provide any persons who represent a danger
+    to this Office with a blueprint as to how to avoid whatever security systems are put in
+    place for the protection of this Office, its staff and members of the public. Disclosure
+    of these records could also identify confidential sources of information regarding
+    threats to this office, which puts those individuals at risk of retaliation and/ or could
+
+    discourage other such informants from coming forward in the future. 1 Matter of
+    Johnson v. New York Ciry Police Dept., 257 A.D.2d 343, 349 (1st Dept. 1999).
+    In addition, your request is denied on the ground that the release of the
+    requested records may interfere with law enforcement investigation into the threats
+    conveyed in those records. POLÂ§ 87(2)(e)(i) exempts from disclosure records
+    compiled for law enforcement purposes and which, if disclosed, would interfere with
+    an active criminal investigation, as well as with any further investigation and judicial
+    proceedings that might be necessary. POLÂ§ 87(2)(e)(i). See Whitley v. New York Counry
+    Dist. Atry. 's Office, 101 A.D.3d 455, 455 (1st Dept. 2012); Moreno v. New York Counry
+    District Attorney's Office, 38 A.D.3d 358, 358 (1st Dept. 2007); Matter of Legal Aid Sociery
+    v NYPD, 274 A.D.2d 207,214 (1st Dept. 2000); Matter of Philip v. NYPD, 2014 N.Y.
+    Slip Op 30408(U)(Sup. Ct. N.Y. County 2014).
+    Lastly, your request is denied because POLÂ§ 87(2)(e)(iv) exempts from
+    disclosure records that would "reveal criminal investigative techniques or procedures,
+    except routine techniques and procedures." POLÂ§ 87(2)(e)(iv). Such information is
+    protected when "disclosure of those procedures would give rise to a substantial
+    likelihood that violators could evade detection by deliberately tailoring their conduct
+    in anticipation of avenues of inquiry to be pursued by agency personnel." Fink v.
+    Lefkowit~ 47 N.Y.2d 567, 572 (1979); see also Matter of Bellamy v. New York Ciry Police
+    Dept., 59 A.D.3d 353 (Sup. Ct., N.Y. County 2009).
+    The Freedom of Information Law Appeals Officer is Assistant District
+    Attorney Robin McCabe, Chief of the Civil Litigation Unit, Office of the General
+    Counsel, at the above address.
+    Madeleine Guilmain
+    Assistant District Attorney
+    Records Access Officer
+    1 Moreover, records containing identifying information of possible informants are also protected
+    from disclosure under the privacy exemption. POLÂ§ 87(2)(b); Matter of Bellamy, 87 A.D.3d at 875.
+    """,
+    status="rejected",
+    tracking_number=None,
+    date_estimate=None,
+    price=None
+)
+        await ProcessRequestTestWrapper(variant, arg)
+        
+        
+
+    async def test_669258(self, variant: VariantTypes) -> None:
+        arg = FoiaTestCasePayload(
+    name="669258",
+    tid=669258,
+    cid=1496602,
+    username="Alpha",
+    communication="""The Mayor's Office (OOM) has closed your FOIL request FOIL-2022-002-00322 for the following reasons: (https://a860-openrecords.nyc.gov/request/view/FOIL-2022-002-00322)
+    Your request under the Freedom of Information Law (FOIL) is denied. Please see the attached determination letter.
+    You may appeal the decision to deny access to material that was redacted in part or withheld in entirety by contacting the agency's FOIL Appeals Officer: foilappeal@cityhall.nyc.gov within 30 days. (mailto:foilappeal@cityhall.nyc.gov?subject=FOIL-2022-002-00322%20-%20Appeal)
+    """,
+    file_text="""""",
+    status="rejected",
+    tracking_number="FOIL-2022-002-00322",
+    date_estimate=None,
+    price=None
+)
+        await ProcessRequestTestWrapper(variant, arg)
+        
+        
+
+    async def test_668824(self, variant: VariantTypes) -> None:
+        arg = FoiaTestCasePayload(
+    name="668824",
+    tid=668824,
+    cid=1495388,
+    username="Alpha",
+    communication="""Good Morning,
+
+    Your request has been marked as completed and closed due to being unduly burdensome. You may re-submit your request with modified parameters.
+
+    Thank you,
+
+    PO Anthony Fabian #10063
+    Chicago Police Department
+    Office of Legal Affairs
+    """,
+    file_text="""""",
+    status="rejected",
+    tracking_number=None,
+    date_estimate=None,
+    price=None
+)
+        await ProcessRequestTestWrapper(variant, arg)
+        
+        
+
+    async def test_667728(self, variant: VariantTypes) -> None:
+        arg = FoiaTestCasePayload(
+    name="667728",
+    tid=667728,
+    cid=1491672,
+    username="Alpha",
+    communication="""Dear Requestor,
+
+    This is Contra Costa Health’s response to your attached request for records pursuant to the Public Records Act, received on May 10, 2023. Your request seeks “the names, dates, place of death, and if available occupation and employer of all people, who’ve committed suicide since 2010.” We have not identified any records that are responsive to your request except for those that are exempt from disclosure under laws protecting individual’s privacy rights, including medical privacy. (Gov. Code, §§ 7927.700, 7927.705; Civ. Code, §§ 56 et seq.; 45 C.F.R §§ 164.500 et seq.)
+
+    Sincerely,
+
+    Bud De Cesare
+    Fiscal Manager
+    Contra Costa Health
+    """,
+    file_text="""65-65-65 1:21 EDT RE: California Public Records Act Request: Li 414094672963 PAGE 1/
+    Departnent of Public Health
+    PRA Office
+    suite 310
+    50 Douglas Drive
+    Hartinez, CA 84553
+    Hay 5, 2023
+    This is a follow up to a previous request:
+    To Whom It May Concern:
+    I wanted to follow up on the following California Public Records Act request,
+    copied below, and originally submitted on Jan. 26, 2618. Please let me know when
+    Ian expect to receive a response.
+    Thanks for your help, and let me know if further clarification is needed.
+    View request history, upload responsive documents, and report problems here:
+    RLLpS: / wna. BUCK OCK . CON/ respond/1485247/
+    If prompted for a passcode, please enter
+    VACFBHPA
+    Filed via MuckRock.con
+    E-mail (Preferred): 47821-27353711grequests.mickrock con
+    PLEASE NOTE OUR NEW ADDRESS
+    For mailed responses, please address (see note):
+    HuckRock News,
+    DEPT HR 47821
+    263 Huntington Ave
+    Boston, MA 62115
+    PLEASE NOTE: This request is not filed by a MuckRock staff member, but is being
+    sent through MuckRock by the above in order to better track, share, and manage
+    public records requests. Also note that inproperly addressed (1.c., with the
+    Tequester's nane rather than "HuckRock Newsâ and the department number) requests
+    might be returned as undeliverable.
+    on Jan. 26, 2018:
+    subject: California Public Records Act Request: List of People Who've Coamitted
+    Suicide since 2010
+    To hon It May Concern:
+    Pursuant to the California Public Records Act (California Government Code Â§Â§
+    6250), 1 hereby request the following records:
+    Please provide records with the names, dates, place of death, and if available
+    occupation and employer of all people, who've committed suicide since 2016.
+    The requested documents will be made available to the general public, and this
+    request is not being made for commercial purposes.
+    In the event that there are fees, I would be grateful if you would inform me of
+    
+
+    (3-65-65 41:21 EDT RE: California Public Records Act Request: Li 14634672963 PAGE 2,
+    the total charges in advance of fulfilling my request. I would prefer the
+    request filled electronically, by e-mail attachnent if available or CD-ROM if
+    not.
+
+    Thank you in advance for your anticipated cooperation in this matter. I look
+    forward to receiving your response to this request within 16 calendar days, as
+    the statute requires.
+
+    sincerely,
+
+    Gershon Bialer
+
+    View request history, upload responsive documents, and report problems here:
+    https: //vaa mickrock Con respond/1485247/
+
+    If prompted for a passcode, please enter:
+
+    VACFBHPA
+
+    Filed via MuckRock.con
+
+    E-mail (Preferred): 47821-273537116requests. nuckrock. con
+
+    PLEASE NOTE OUR NEW ADDRESS
+
+    For mailed responses, please address (see note)
+
+    HuckRock News.
+
+    DEPT MR 47821
+
+    263 Huntington Ave
+
+    Boston, MA 62115
+
+    PLEASE NOTE: This request is not filed by a MuckRock staff member, but is being
+    sent through HuckRock by the above in order to better track, share, and manage
+    PUDLLC records requests. Also note that improperly addressed (i.e., with the
+    requester 's name rather than "MuckRock News" and the department nusber) requests
+    might be returned as undeliverable.
+    """,
+    status="rejected",
+    tracking_number=None,
+    date_estimate=None,
+    price=None
+)
+        await ProcessRequestTestWrapper(variant, arg)
+        
+        
+
+    async def test_667620(self, variant: VariantTypes) -> None:
+        arg = FoiaTestCasePayload(
+    name="667620",
+    tid=667620,
+    cid=1491664,
+    username="Alpha",
+    communication="""Good afternoon,
+
+
+The Atlanta Police Department is in receipt of your request made under the Georgia Open Records Act.
+
+In your request you ask for the following:
+
+
+All contracts, licenses, MOUs, MOAs, data agreements, letters of intent, State of Work documents, Scope of Work documents, and other agreement documents between the Atlanta Police Department and Fusus.
+
+
+
+According to the Atlanta Police Department Fiscal Unit, this request should go to openrecords-procurement@atlantaga.gov<mailto:dopopenrecordrequest@atlantaga.gov>.
+
+
+Thank you,
+
+Sergeant G. Nelms
+Atlanta Police Department Open Records""",
+    file_text="",
+    status="rejected",
+    tracking_number=None,
+    date_estimate=None,
+    price=None
+)
+        await ProcessRequestTestWrapper(variant, arg)
+        
+        
+
+    async def test_667908(self, variant: VariantTypes) -> None:
+        arg = FoiaTestCasePayload(
+    name="667908",
+    tid=667908,
+    cid=1492057,
+    username="Alpha",
+    communication="""Greetings,
+
+You have contacted the City of Atlanta, Department of Procurement.  Please be advised that the Department of Procurement (DOP) would not be the main custody of the documents that are responsive to your request, therefore, there are no documents to make available to you through the DOP.
+
+In addition, we would suggest you contact the Department of Finance at: OpenRecords-Finance@AtlantaGA.gov<mailto:OpenRecords-Finance@AtlantaGA.gov>, to determine if they possess the information you seek.
+
+
+[cid:image001.png@01D98980.8F3673F0]""",
+    file_text="",
+    status="rejected",
+    tracking_number=None,
+    date_estimate=None,
+    price=None
+)
+        await ProcessRequestTestWrapper(variant, arg)
+        
+        
+
+    async def test_669165(self, variant: VariantTypes) -> None:
+        arg = FoiaTestCasePayload(
+    name="669165",
+    tid=669165,
+    cid=1496472,
+    username="Alpha",
+    communication="""Good morning,
+
+Our office is not the custodian of these records.
+
+Sincerely,
+Office of Open Government""",
+    file_text="",
+    status="rejected",
+    tracking_number=None,
+    date_estimate=None,
     price=None
 )
         await ProcessRequestTestWrapper(variant, arg)

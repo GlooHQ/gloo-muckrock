@@ -101,7 +101,7 @@ class Testtracking_numbers:
     Chief, FOIA/PA Division""",
     status="fix",
     tracking_number="116287",
-    date_estimate="None",
+    date_estimate=None,
     price=None
 )
         await ProcessRequestMetadataTestWrapper(variant, arg)
@@ -122,10 +122,10 @@ Should you desire the FOIA Office to continue working your case, please note, cu
 Should you need to contact us about your request, please do so via email saf.aa.haf.foia.workflow@us.af.mil Attention Ms. Janet Beasley.    Please ensure to reference your case number.
  \\\\Signed\\\\
  HAF FOIA TEAM  SAF/AAII (FOIA)""",
-    file_text="""None""",
+    file_text="",
     status="fix",
     tracking_number="2021-02798-F",
-    date_estimate="None",
+    date_estimate=None,
     price=None
 )
         await ProcessRequestMetadataTestWrapper(variant, arg)
@@ -175,10 +175,10 @@ Should you need to contact us about your request, please do so via email saf.aa.
     Fax: (510) 238-6500
 
     This is a confidential attorney-client communication. This email contains confidential attorney-client privileged information and is for the sole use of the intended recipient(s). Any unauthorized review, use, disclosure or distribution is prohibited. If you are not the intended recipient, please contact the sender by reply e-mail and destroy all copies of the original message and any attachments. [v1.3]""",
-    file_text="""None""",
+    file_text="",
     status="fix",
     tracking_number="19-861",
-    date_estimate="None",
+    date_estimate=None,
     price=None
 )
         await ProcessRequestMetadataTestWrapper(variant, arg)
@@ -263,7 +263,7 @@ Should you need to contact us about your request, please do so via email saf.aa.
     Chief, FOIA/PA Division""",
     status="fix",
     tracking_number="116392",
-    date_estimate="None",
+    date_estimate=None,
     price=None
 )
         await ProcessRequestMetadataTestWrapper(variant, arg)
@@ -322,7 +322,7 @@ Syreeta Jackson
 Government Information Specialist""",
     status="no_docs",
     tracking_number="FFRA-23-00175",
-    date_estimate="None",
+    date_estimate=None,
     price=None
 )
         await ProcessRequestMetadataTestWrapper(variant, arg)
@@ -538,7 +538,7 @@ who furnished the material pursuant to a promise that his/her identity would be 
 FBI/DOJ""",
     status="no_docs",
     tracking_number="1592775-000",
-    date_estimate="None",
+    date_estimate=None,
     price=None
 )
         await ProcessRequestMetadataTestWrapper(variant, arg)
@@ -610,7 +610,7 @@ Matthew W. Hurd,
 Chief, Administrative Appeals Staff""",
     status="no_docs",
     tracking_number="A-2023-01089",
-    date_estimate="None",
+    date_estimate=None,
     price=None
 )
         await ProcessRequestMetadataTestWrapper(variant, arg)

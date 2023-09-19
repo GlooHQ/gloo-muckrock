@@ -39,7 +39,7 @@ Should you desire the FOIA Office to continue working your case, please note, cu
 Should you need to contact us about your request, please do so via email saf.aa.haf.foia.workflow@us.af.mil Attention Ms. Janet Beasley.    Please ensure to reference your case number.
  \\\\Signed\\\\
  HAF FOIA TEAM  SAF/AAII (FOIA)""",
-    file_text="""None""",
+    file_text="",
     status="fix",
     tracking_number="2021-02798-F",
     date_estimate="2023-06-07",
@@ -66,10 +66,10 @@ FOIA Management Specialist
 817-222-5059
 
 [AFN-3 Logo]""",
-    file_text="""None""",
+    file_text="",
     status="fix",
-    tracking_number="None",
-    date_estimate="None",
+    tracking_number=None,
+    date_estimate=None,
     price=None
 )
         await ProcessRequestTestWrapper(variant, arg)
@@ -119,10 +119,10 @@ FOIA Management Specialist
     Fax: (510) 238-6500
 
     This is a confidential attorney-client communication. This email contains confidential attorney-client privileged information and is for the sole use of the intended recipient(s). Any unauthorized review, use, disclosure or distribution is prohibited. If you are not the intended recipient, please contact the sender by reply e-mail and destroy all copies of the original message and any attachments. [v1.3]""",
-    file_text="""None""",
+    file_text="",
     status="fix",
     tracking_number="19-861",
-    date_estimate="None",
+    date_estimate=None,
     price=None
 )
         await ProcessRequestTestWrapper(variant, arg)
@@ -207,7 +207,7 @@ FOIA Management Specialist
     Chief, FOIA/PA Division""",
     status="fix",
     tracking_number="116392",
-    date_estimate="None",
+    date_estimate=None,
     price=None
 )
         await ProcessRequestTestWrapper(variant, arg)
@@ -250,10 +250,10 @@ FOIA Management Specialist
     If you do not want your e-mail address released in response to a public
     records request, do not send electronic mail to this entity. Instead,
     contact this office by phone or in writing.""",
-    file_text="""None""",
+    file_text="",
     status="fix",
-    tracking_number="None",
-    date_estimate="None",
+    tracking_number=None,
+    date_estimate=None,
     price=None
 )
         await ProcessRequestTestWrapper(variant, arg)
@@ -270,10 +270,10 @@ FOIA Management Specialist
 
     David P. Powers
     Law Director""",
-    file_text="""None""",
+    file_text="",
     status="fix",
-    tracking_number="None",
-    date_estimate="None",
+    tracking_number=None,
+    date_estimate=None,
     price=None
 )
         await ProcessRequestTestWrapper(variant, arg)
@@ -356,7 +356,7 @@ FOIA Management Specialist
     Chief, FOIA/PA Division""",
     status="fix",
     tracking_number="116287",
-    date_estimate="None",
+    date_estimate=None,
     price=None
 )
         await ProcessRequestTestWrapper(variant, arg)

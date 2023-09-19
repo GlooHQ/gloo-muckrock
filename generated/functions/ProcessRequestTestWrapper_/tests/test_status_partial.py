@@ -102,7 +102,7 @@ Carolyn Hawkins
 Barstow Police Department
 City of Barstow""",
     status="partial",
-    tracking_number="None",
+    tracking_number=None,
     date_estimate="2023-05-15",
     price=None
 )
@@ -239,7 +239,7 @@ City of Barstow""",
 
     """,
     status="partial",
-    tracking_number="None",
+    tracking_number=None,
     date_estimate="2023-05-17",
     price=None
 )
@@ -314,7 +314,7 @@ City of Barstow""",
     file_text="""""",
     status="partial",
     tracking_number="2023-002",
-    date_estimate="None",
+    date_estimate=None,
     price=None
 )
         await ProcessRequestTestWrapper(variant, arg)
@@ -360,7 +360,7 @@ City of Barstow""",
     """,
     file_text="""""",
     status="partial",
-    tracking_number="None",
+    tracking_number=None,
     date_estimate="2023-06-16",
     price=None
 )

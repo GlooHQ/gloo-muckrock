@@ -51,7 +51,7 @@ FOIA Coordinator
 foia@sc.edu
 Communications and Marketing
 University of South Carolina""",
-    file_text="""None""",
+    file_text="",
     status="payment",
     tracking_number="FR-2023-97",
     date_estimate="2023-05-15",
@@ -92,10 +92,10 @@ Chris Robilotti
 Christopher Robilotti
 Assistant Superintendent of Human Resources & Safe Schools
 *(518) 869-3576 Ext. 0470*""",
-    file_text="""None""",
+    file_text="",
     status="payment",
-    tracking_number="None",
-    date_estimate="None",
+    tracking_number=None,
+    date_estimate=None,
     price=237.5
 )
         await ProcessRequestTestWrapper(variant, arg)
@@ -252,8 +252,8 @@ Sincerely,
 Jennifer Kelly
 FOIA Coordinator""",
     status="payment",
-    tracking_number="None",
-    date_estimate="None",
+    tracking_number=None,
+    date_estimate=None,
     price=9118.8
 )
         await ProcessRequestTestWrapper(variant, arg)
@@ -359,8 +359,8 @@ Freedom of Information Act Section
 MS/
 Enclosure""",
     status="payment",
-    tracking_number="None",
-    date_estimate="None",
+    tracking_number=None,
+    date_estimate=None,
     price=None
 )
         await ProcessRequestTestWrapper(variant, arg)
@@ -395,8 +395,8 @@ rds
 Danita McNair Court Program Supervisor
 \\B\'""",
     status="payment",
-    tracking_number="None",
-    date_estimate="None",
+    tracking_number=None,
+    date_estimate=None,
     price=None
 )
         await ProcessRequestTestWrapper(variant, arg)
@@ -463,10 +463,10 @@ ArayaS@pwcs.edu<mailto:ArayaS@pwcs.edu>
 
 CONFIDENTIALITY NOTICE:
 This message and any attachments may be confidential or legally privileged and are intended only for the individual or entity identified above as the addressee.  This message is not to be forwarded, redirected, or copied to anyone except staff in Prince William County Schools or as expressly authorized by the sender.  Printed copies of this e-mail are to be held as confidential and/or legally privileged.  If you are not the addressee, or if this message has been addressed to you in error, please delete this message and any attachments and notify the sender by return e-mail or by the number(s) listed above.""",
-    file_text="""None""",
+    file_text="",
     status="payment",
-    tracking_number="None",
-    date_estimate="None",
+    tracking_number=None,
+    date_estimate=None,
     price=None
 )
         await ProcessRequestTestWrapper(variant, arg)
@@ -532,8 +532,8 @@ Corrie Schmidt-Parker
 Office of Legal Affairs
 CSP/tch""",
     status="payment",
-    tracking_number="None",
-    date_estimate="None",
+    tracking_number=None,
+    date_estimate=None,
     price=None
 )
         await ProcessRequestTestWrapper(variant, arg)
@@ -610,7 +610,7 @@ DAT
 Caryng DeMatteo
 âSpecial Assistant to the General Counsel and Vice President of Legal Service""",
     status="payment",
-    tracking_number="None",
+    tracking_number=None,
     date_estimate="2023-05-19",
     price=81601.83
 )
@@ -1240,7 +1240,7 @@ Due:
 $_________
 Board Adopted March 7, 2017, Updated March 13, 2018.""",
     status="payment",
-    tracking_number="None",
+    tracking_number=None,
     date_estimate="2023-05-22",
     price=2814.4
 )
@@ -1300,8 +1300,8 @@ WCSO Tax ID #596000897
 
  Total Cost:""",
     status="payment",
-    tracking_number="None",
-    date_estimate="None",
+    tracking_number=None,
+    date_estimate=None,
     price=30.0
 )
         await ProcessRequestTestWrapper(variant, arg)

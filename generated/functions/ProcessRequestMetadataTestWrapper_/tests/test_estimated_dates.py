@@ -64,7 +64,7 @@ class Testestimated_dates:
     """,
     file_text="""""",
     status="partial",
-    tracking_number="None",
+    tracking_number=None,
     date_estimate="2023-06-16",
     price=None
 )
@@ -104,9 +104,9 @@ class Testestimated_dates:
     in error please immediately notify me at 206.23.3367
     and permanently delete the
     original email (and any copy of any email) and any printout thereof.""",
-    file_text="""None""",
+    file_text="",
     status="processed",
-    tracking_number="None",
+    tracking_number=None,
     date_estimate="2023-06-15",
     price=None
 )
@@ -130,9 +130,9 @@ class Testestimated_dates:
     Text : 505-660-8508
     FAX: 505-827-4474
     Report suspected child abuse or neglect by calling #SAFE (#7233) from a cell phone or 1-855-333-SAFE.""",
-    file_text="""None""",
+    file_text="",
     status="processed",
-    tracking_number="None",
+    tracking_number=None,
     date_estimate="2023-06-07",
     price=None
 )
@@ -183,7 +183,7 @@ class Testestimated_dates:
     George W. Bush Presidential Library
     JB: MAC""",
     status="processed",
-    tracking_number="None",
+    tracking_number=None,
     date_estimate="2043-05-26",
     price=None
 )

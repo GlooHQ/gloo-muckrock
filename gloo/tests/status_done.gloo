@@ -236,8 +236,8 @@
                 Sent from my iPhone
                 Please be CAREFUL when clicking links or opening attachments from external senders.""",
                     status="done",
-                    tracking_number="None",
-                    date_estimate="None",
+                    tracking_number=None,
+                    date_estimate=None,
                     price=None
                 )
             }
@@ -312,8 +312,8 @@
                 Terry Beswick, Treasurer
                 Castro Merchants""",
                     status="done",
-                    tracking_number="None",
-                    date_estimate="None",
+                    tracking_number=None,
+                    date_estimate=None,
                     price=None
                 )
             }
@@ -457,8 +457,8 @@
                 cc: Manza Arthur, Supervisor of Records 
                  Laura VanDorn, Leominster Public Schools""",
                     status="done",
-                    tracking_number="None",
-                    date_estimate="None",
+                    tracking_number=None,
+                    date_estimate=None,
                     price=None
                 )
             }
@@ -9439,8 +9439,8 @@
                 |
                 \\""",
                     status="done",
-                    tracking_number="None",
-                    date_estimate="None",
+                    tracking_number=None,
+                    date_estimate=None,
                     price=None
                 )
             }
@@ -9579,8 +9579,8 @@
                 sy eimnanotior PL Ents hme ome eyptfaz
                 Monulouscon S550 ng Fork Ste 0, Pesce comrs A 300% (68) 2269226""",
                     status="done",
-                    tracking_number="None",
-                    date_estimate="None",
+                    tracking_number=None,
+                    date_estimate=None,
                     price=None
                 )
             }
@@ -9611,9 +9611,9 @@
                 Madison, TN  37115
                 615-862-7631
                 PRR 23-0083836""",
-                    file_text="""None""",
+                    file_text="",
                     status="done",
-                    tracking_number="None",
+                    tracking_number=None,
                     date_estimate="2023-11-30",
                     price=None
                 )
@@ -9636,7 +9636,7 @@
                 PO Anthony Fabian #10063
                 Chicago Police Department
                 Office of Legal Affairs""",
-                    file_text="""None""",
+                    file_text="",
                     status="done",
                     tracking_number="P549586-121619",
                     date_estimate="2020-01-07",

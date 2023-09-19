@@ -103,7 +103,7 @@ Record/Information Dissemination Section
 Information Management Division""",
     status="processed",
     tracking_number="1592850-000",
-    date_estimate="None",
+    date_estimate=None,
     price=None
 )
         await ProcessRequestTestWrapper(variant, arg)
@@ -149,10 +149,10 @@ Kind regards,
 
 MT Department of Environmental Quality
 To monitor the progress or update this request please log into the Montana DEQ Public Records Center (https://u8387778.ct.sendgrid.net/ls/click?upn=6HtRfOYLt5fXvpttM-2FU1HUS-2FweBYdYdrlt-2FwBpqTZHpmoymZ6KjXWTip2A6RU4QTMciKEjc-2FGf9vZuJO1wbOgkR0-2BUTyCRo9-2FTN4dxW33gQ-3DfJlY_MpmAxW2ZXvsGKIhIx9oMjGfsuRkvvk3yaQ9g8AzNPo4ALAE5YBPvqeh2AstcoFT0KfWOBIXiRE7guK9tOZMp2HKdrDZL0DF8AikkHcKMIeWgNxfczDxRDSSECcl94F8EjyoyAc5o2ZNstPX5ht-2FLDzTZL3VBZPlnrq9DbzBTwvWt8Ut4vHsEq2nLXJ6QwoqqVWcDzuXtY10C6Pv-2Fs69dsjsPysZYc2MqpkTeIMTx5x4-3D)""",
-    file_text="""None""",
+    file_text="",
     status="processed",
     tracking_number="R003193-052523",
-    date_estimate="None",
+    date_estimate=None,
     price=None
 )
         await ProcessRequestTestWrapper(variant, arg)
@@ -195,10 +195,10 @@ privileged material.  Any use of this information other than by the
 intended recipient is prohibited.  If you receive this message in error,
 please send a reply email to the sender and delete the material from any
 and all computers*.*""",
-    file_text="""None""",
+    file_text="",
     status="processed",
-    tracking_number="None",
-    date_estimate="None",
+    tracking_number=None,
+    date_estimate=None,
     price=None
 )
         await ProcessRequestTestWrapper(variant, arg)
@@ -247,10 +247,10 @@ Records Management Specialist – Office of the City Clerk
 City of Torrance | 3031 Torrance Boulevard | Torrance CA 90503 | 310.618.2870 | 310.618.2931 fax | LGarcia@TorranceCA.Gov<mailto:LGarcia@TorranceCA.Gov> | www.TorranceCA.Gov | www.TorranceCA.Gov/SocialMedia<http://www.torranceca.gov/SocialMedia> | www.TorranceCA.Gov/WhyTorrance<http://www.torranceca.gov/WhyTorrance>  | www.TorranceCA.Gov/Apps<http://www.torranceca.gov/Apps>
 
 [cid:image001.jpg@01D97E6E.8784CCF0]""",
-    file_text="""None""",
+    file_text="",
     status="processed",
-    tracking_number="None",
-    date_estimate="None",
+    tracking_number=None,
+    date_estimate=None,
     price=None
 )
         await ProcessRequestTestWrapper(variant, arg)
@@ -299,10 +299,10 @@ Thank you.
 
 Nassau County Police Department
 https://www.pdcn.org/\"""",
-    file_text="""None""",
+    file_text="",
     status="processed",
-    tracking_number="None",
-    date_estimate="None",
+    tracking_number=None,
+    date_estimate=None,
     price=None
 )
         await ProcessRequestTestWrapper(variant, arg)
@@ -366,8 +366,8 @@ California Employment Development Department
 Gavin Newsom, Governor
 California Labor and Workforce Development Agency""",
     status="processed",
-    tracking_number="None",
-    date_estimate="None",
+    tracking_number=None,
+    date_estimate=None,
     price=None
 )
         await ProcessRequestTestWrapper(variant, arg)
@@ -433,10 +433,10 @@ College Park, MD 20740-6001
 
 rebecca.sharp@nara.gov
 www.archives.gov/research/foia/""",
-    file_text="""None""",
+    file_text="",
     status="processed",
     tracking_number="23-F-0434",
-    date_estimate="None",
+    date_estimate=None,
     price=None
 )
         await ProcessRequestTestWrapper(variant, arg)
@@ -476,9 +476,9 @@ kwhitaker@andersoncountytn.gov<mailto:kwhitaker@andersoncountytn.govorg> | Websi
 In every crisis, doubt or confusion, take the higher path - the path of compassion, courage ~ Amit Ray, Author
 
 Confidentiality Note: The information contained in this e-mail transmission is privileged and confidential and is intended only for the recipient(s) named above. If the reader of this message is not the recipient(s) named above or an authorized agent of such recipient(s) responsible for delivering it to the intended recipient(s), you are hereby notified that you have received this e-mail in error, and that any review, dissemination, distribution, or copying of this transmission (including any attachments) is strictly prohibited. If you have received this e-mail in error, please notify the sender immediately by e-mail reply. Thank you!""",
-    file_text="""None""",
+    file_text="",
     status="processed",
-    tracking_number="None",
+    tracking_number=None,
     date_estimate="2023-05-30",
     price=None
 )

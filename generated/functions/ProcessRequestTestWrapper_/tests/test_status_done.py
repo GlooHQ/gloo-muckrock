@@ -259,8 +259,8 @@ Passcode:
 Sent from my iPhone
 Please be CAREFUL when clicking links or opening attachments from external senders.""",
     status="done",
-    tracking_number="None",
-    date_estimate="None",
+    tracking_number=None,
+    date_estimate=None,
     price=None
 )
         await ProcessRequestTestWrapper(variant, arg)
@@ -334,8 +334,8 @@ Thank you for your attention to this matter,
 Terry Beswick, Treasurer
 Castro Merchants""",
     status="done",
-    tracking_number="None",
-    date_estimate="None",
+    tracking_number=None,
+    date_estimate=None,
     price=None
 )
         await ProcessRequestTestWrapper(variant, arg)
@@ -479,8 +479,8 @@ Jocelyn Brisebois
 cc: Manza Arthur, Supervisor of Records
  Laura VanDorn, Leominster Public Schools""",
     status="done",
-    tracking_number="None",
-    date_estimate="None",
+    tracking_number=None,
+    date_estimate=None,
     price=None
 )
         await ProcessRequestTestWrapper(variant, arg)
@@ -9461,8 +9461,8 @@ Corn. q-7- 68 A
 |
 \\""",
     status="done",
-    tracking_number="None",
-    date_estimate="None",
+    tracking_number=None,
+    date_estimate=None,
     price=None
 )
         await ProcessRequestTestWrapper(variant, arg)
@@ -9601,8 +9601,8 @@ Approved (Signature: 2 24
 sy eimnanotior PL Ents hme ome eyptfaz
 Monulouscon S550 ng Fork Ste 0, Pesce comrs A 300% (68) 2269226""",
     status="done",
-    tracking_number="None",
-    date_estimate="None",
+    tracking_number=None,
+    date_estimate=None,
     price=None
 )
         await ProcessRequestTestWrapper(variant, arg)
@@ -9630,9 +9630,9 @@ Suite 100
 Madison, TN  37115
 615-862-7631
 PRR 23-0083836""",
-    file_text="""None""",
+    file_text="",
     status="done",
-    tracking_number="None",
+    tracking_number=None,
     date_estimate="2023-11-30",
     price=None
 )
@@ -9655,7 +9655,7 @@ Thank you,
 PO Anthony Fabian #10063
 Chicago Police Department
 Office of Legal Affairs""",
-    file_text="""None""",
+    file_text="",
     status="done",
     tracking_number="P549586-121619",
     date_estimate="2020-01-07",

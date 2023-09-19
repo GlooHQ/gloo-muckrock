@@ -77,29 +77,7 @@ Syreeta Jackson
 Government Information Specialist""",
     status="no_docs",
     tracking_number="FFRA-23-00175",
-    date_estimate="None",
-    price=None
-)
-        await ProcessRequestTestWrapper(variant, arg)
-        
-        
-
-    async def test_669165(self, variant: VariantTypes) -> None:
-        arg = FoiaTestCasePayload(
-    name="669165",
-    tid=669165,
-    cid=1496472,
-    username="Alpha",
-    communication="""Good morning,
-
-Our office is not the custodian of these records.
-
-Sincerely,
-Office of Open Government""",
-    file_text="""None""",
-    status="no_docs",
-    tracking_number="None",
-    date_estimate="None",
+    date_estimate=None,
     price=None
 )
         await ProcessRequestTestWrapper(variant, arg)
@@ -129,10 +107,10 @@ Juneau, Alaska 99811
 907-465-6296
 Fax 907-465-3263
 www.dps.alaska.gov/apsc<http://www.dps.alaska.gov/apsc>""",
-    file_text="""None""",
+    file_text="",
     status="no_docs",
     tracking_number="PIR 53665",
-    date_estimate="None",
+    date_estimate=None,
     price=None
 )
         await ProcessRequestTestWrapper(variant, arg)
@@ -161,34 +139,10 @@ Douglas O’Connell
 Paralegal Supervisor
 FOIL Records Access Officer
 (718) 250-4742""",
-    file_text="""None""",
+    file_text="",
     status="no_docs",
-    tracking_number="None",
+    tracking_number=None,
     date_estimate="2023-05-05",
-    price=None
-)
-        await ProcessRequestTestWrapper(variant, arg)
-        
-        
-
-    async def test_667908(self, variant: VariantTypes) -> None:
-        arg = FoiaTestCasePayload(
-    name="667908",
-    tid=667908,
-    cid=1492057,
-    username="Alpha",
-    communication="""Greetings,
-
-You have contacted the City of Atlanta, Department of Procurement.  Please be advised that the Department of Procurement (DOP) would not be the main custody of the documents that are responsive to your request, therefore, there are no documents to make available to you through the DOP.
-
-In addition, we would suggest you contact the Department of Finance at: OpenRecords-Finance@AtlantaGA.gov<mailto:OpenRecords-Finance@AtlantaGA.gov>, to determine if they possess the information you seek.
-
-
-[cid:image001.png@01D98980.8F3673F0]""",
-    file_text="""None""",
-    status="no_docs",
-    tracking_number="None",
-    date_estimate="None",
     price=None
 )
         await ProcessRequestTestWrapper(variant, arg)
@@ -404,42 +358,7 @@ who furnished the material pursuant to a promise that his/her identity would be 
 FBI/DOJ""",
     status="no_docs",
     tracking_number="1592775-000",
-    date_estimate="None",
-    price=None
-)
-        await ProcessRequestTestWrapper(variant, arg)
-        
-        
-
-    async def test_667620(self, variant: VariantTypes) -> None:
-        arg = FoiaTestCasePayload(
-    name="667620",
-    tid=667620,
-    cid=1491664,
-    username="Alpha",
-    communication="""Good afternoon,
-
-
-The Atlanta Police Department is in receipt of your request made under the Georgia Open Records Act.
-
-In your request you ask for the following:
-
-
-All contracts, licenses, MOUs, MOAs, data agreements, letters of intent, State of Work documents, Scope of Work documents, and other agreement documents between the Atlanta Police Department and Fusus.
-
-
-
-According to the Atlanta Police Department Fiscal Unit, this request should go to openrecords-procurement@atlantaga.gov<mailto:dopopenrecordrequest@atlantaga.gov>.
-
-
-Thank you,
-
-Sergeant G. Nelms
-Atlanta Police Department Open Records""",
-    file_text="""None""",
-    status="no_docs",
-    tracking_number="None",
-    date_estimate="None",
+    date_estimate=None,
     price=None
 )
         await ProcessRequestTestWrapper(variant, arg)
@@ -511,7 +430,7 @@ Matthew W. Hurd,
 Chief, Administrative Appeals Staff""",
     status="no_docs",
     tracking_number="A-2023-01089",
-    date_estimate="None",
+    date_estimate=None,
     price=None
 )
         await ProcessRequestTestWrapper(variant, arg)

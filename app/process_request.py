@@ -26,9 +26,10 @@ class MRStatus(Enum):
     APPEALING = "appealing"
     REJECTED = "rejected"
     PARTIAL = "partial"
+    INDETERMINATE = "indeterminate"
 
 
-def map_status(status: RequestStatus, recordsStatus: RecordsStatus):
+def map_status_(status: RequestStatus, recordsStatus: RecordsStatus):
     status_mapping = {
         MRStatus.NO_DOCS.value: "",
         MRStatus.PROCESSED.value: "IN_PROGRESS",
@@ -41,6 +42,31 @@ def map_status(status: RequestStatus, recordsStatus: RecordsStatus):
         MRStatus.PARTIAL.value: "PARTIAL",
     }
     return status_mapping.get(status, "INDETERMINATE")
+
+def map_status(data: FOIARequestData) -> MRStatus:
+
+    match (data.requestStatus, data.recordsStatus):
+        case (RequestStatus.REQUEST_COMPLETED, RecordsStatus.NO_RECORDS_FOUND):
+            return MRStatus.NO_DOCS
+        case (RequestStatus.REQUEST_COMPLETED, RecordsStatus.RECORDS_FOUND):
+            return MRStatus.DONE
+        case (RequestStatus.IN_PROGRESS, RecordsStatus.MORE_RECORDS_PENDING):
+            return MRStatus.PARTIAL
+        case (RequestStatus.IN_PROGRESS, RecordsStatus.RECORDS_FOUND):
+            return MRStatus.PARTIAL
+        case (RequestStatus.IN_PROGRESS, _):
+            return MRStatus.PROCESSED
+        case (RequestStatus.PAYMENT_REQUIRED, _):
+            return MRStatus.PAYMENT
+        case (RequestStatus.FIX_REQUIRED, _):
+            return MRStatus.FIX
+        case (RequestStatus.REQUEST_REJECTED, _):
+            return MRStatus.REJECTED
+        case (_, _):
+            return MRStatus.INDETERMINATE
+
+    if data.requestStatus == RequestStatus.REQUEST_COMPLETED:
+        pass
 
 
 class ExpectedOutput(BaseModel):
@@ -89,19 +115,30 @@ def expected_gloo_statuses(mrStatus: MRStatus) -> ExpectedOutput:
     )
     return ExpectedOutput(status=status, recordsStatus=records_status)
 
+enc = tiktoken.encoding_for_model("gpt-4")
 
-async def process_request(input: str) -> FOIARequestData:
-    # summarize_response = await Summarize("v1", input)
+
+async def process_request(request_text: str, file_text: str) -> FOIARequestData:
+    
+    if file_text:
+        file_text = f"Attached Correspondence:\n{file_text}"
+        request_text = f"{request_text}\n{file_text}"
+
+    tokens = enc.encode(request_text)
+    ellipsis_tokens = enc.encode("...")
+    max_tokens = 2000
+    if len(tokens) > max_tokens:
+        tokens = tokens[: max_tokens - len(ellipsis_tokens)] + ellipsis_tokens
+    request_text = enc.decode(tokens)
 
     extractedData = await ExtractRequestData(
         "v1",
-        input,
+        request_text,
     )
 
     return extractedData
 
 
-enc = tiktoken.encoding_for_model("gpt-3.5-turbo")
 
 
 # This function is called by the Gloo ProcessRequestTestWrapper function in process-request-test-fn.gloo
@@ -112,27 +149,10 @@ enc = tiktoken.encoding_for_model("gpt-3.5-turbo")
 # The need to declare the .gloo function may be removed in favor of a simpler
 # @gloo_test annotation.
 async def process_request_test(test_case: FoiaTestCasePayload) -> FOIARequestData:
-    file_text = ""
-    if test_case.file_text is not None and test_case.file_text != "None":
-        file_text = f"Attached Correspondence:\n{test_case.file_text}"
 
-    request_text = f"{test_case.communication}\n{file_text}"
-    tokens = enc.encode(request_text)
-    ellipsis_tokens = enc.encode("...")
-    max_tokens = 2000
-    if len(tokens) > max_tokens:
-        tokens = tokens[: max_tokens - len(ellipsis_tokens)] + ellipsis_tokens
-    request_text = enc.decode(tokens)
+    extracted_data = await process_request(test_case.communication, test_case.file_text)
 
-    extracted_data = await process_request(request_text)
-
-    expected_output = expected_gloo_statuses(MRStatus(test_case.status))
-    request_status = extracted_data.requestStatus
-    assert request_status == expected_output.status
-
-    # only check the record status if the request is done
-    if request_status == RequestStatus.REQUEST_COMPLETED:
-        assert extracted_data.recordsStatus == expected_output.recordsStatus
+    assert map_status(extracted_data) == MRStatus(test_case.status)
 
     if test_case.price:
         assert extracted_data.price == test_case.price
@@ -140,24 +160,13 @@ async def process_request_test(test_case: FoiaTestCasePayload) -> FOIARequestDat
     return extracted_data
 
 async def process_request_metadata_test(test_case: FoiaTestCasePayload) -> FOIARequestData:
-    file_text = ""
-    if test_case.file_text is not None and test_case.file_text != "None":
-        file_text = f"Attached Correspondence:\n{test_case.file_text}"
 
-    request_text = f"{test_case.communication}\n{file_text}"
-    tokens = enc.encode(request_text)
-    ellipsis_tokens = enc.encode("...")
-    max_tokens = 2000
-    if len(tokens) > max_tokens:
-        tokens = tokens[: max_tokens - len(ellipsis_tokens)] + ellipsis_tokens
-    request_text = enc.decode(tokens)
+    extracted_data = await process_request(test_case.communication, test_case.file_text)
 
-    extracted_data = await process_request(request_text)
-
-    if test_case.tracking_number and test_case.tracking_number != "None":
+    if test_case.tracking_number:
         assert extracted_data.trackingNumber == test_case.tracking_number
 
-    if test_case.date_estimate and test_case.date_estimate != "None":
+    if test_case.date_estimate:
         assert extracted_data.dateEstimate == test_case.date_estimate
 
     return extracted_data
