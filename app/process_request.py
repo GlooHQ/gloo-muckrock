@@ -13,7 +13,7 @@ import json
 import os
 from generated.custom_types import FoiaTestCasePayload, FOIARequestData
 import tiktoken
-from gloo_py import trace
+from gloo_py import trace, update_trace_tags
 
 
 class MRStatus(Enum):
@@ -118,7 +118,10 @@ def expected_gloo_statuses(mrStatus: MRStatus) -> ExpectedOutput:
 enc = tiktoken.encoding_for_model("gpt-4")
 
 
-async def process_request(request_text: str, file_text: str) -> FOIARequestData:
+async def process_request(request_text: str, file_text: str, **tags) -> FOIARequestData:
+
+    if tags:
+        update_trace_tags(**tags)
     
     if file_text:
         file_text = f"Attached Correspondence:\n{file_text}"
