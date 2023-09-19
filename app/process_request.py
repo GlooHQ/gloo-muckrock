@@ -45,28 +45,28 @@ def map_status_(status: RequestStatus, recordsStatus: RecordsStatus):
 
 def map_status(data: FOIARequestData) -> MRStatus:
 
-    match (data.requestStatus, data.recordsStatus):
-        case (RequestStatus.REQUEST_COMPLETED, RecordsStatus.NO_RECORDS_FOUND):
-            return MRStatus.NO_DOCS
-        case (RequestStatus.REQUEST_COMPLETED, RecordsStatus.RECORDS_FOUND):
-            return MRStatus.DONE
-        case (RequestStatus.IN_PROGRESS, RecordsStatus.MORE_RECORDS_PENDING):
-            return MRStatus.PARTIAL
-        case (RequestStatus.IN_PROGRESS, RecordsStatus.RECORDS_FOUND):
-            return MRStatus.PARTIAL
-        case (RequestStatus.IN_PROGRESS, _):
-            return MRStatus.PROCESSED
-        case (RequestStatus.PAYMENT_REQUIRED, _):
-            return MRStatus.PAYMENT
-        case (RequestStatus.FIX_REQUIRED, _):
-            return MRStatus.FIX
-        case (RequestStatus.REQUEST_REJECTED, _):
-            return MRStatus.REJECTED
-        case (_, _):
-            return MRStatus.INDETERMINATE
+    both = (data.requestStatus, data.recordsStatus)
+    req = data.requestStatus
 
-    if data.requestStatus == RequestStatus.REQUEST_COMPLETED:
-        pass
+    if both == (RequestStatus.REQUEST_COMPLETED, RecordsStatus.NO_RECORDS_FOUND):
+        return MRStatus.NO_DOCS
+    elif both == (RequestStatus.REQUEST_COMPLETED, RecordsStatus.RECORDS_FOUND):
+        return MRStatus.DONE
+    elif both == (RequestStatus.IN_PROGRESS, RecordsStatus.MORE_RECORDS_PENDING):
+        return MRStatus.PARTIAL
+    elif both == (RequestStatus.IN_PROGRESS, RecordsStatus.RECORDS_FOUND):
+        return MRStatus.PARTIAL
+    elif req == RequestStatus.IN_PROGRESS:
+        return MRStatus.PROCESSED
+    elif req == RequestStatus.PAYMENT_REQUIRED:
+        return MRStatus.PAYMENT
+    elif req == RequestStatus.FIX_REQUIRED:
+        return MRStatus.FIX
+    elif req == RequestStatus.REQUEST_REJECTED:
+        return MRStatus.REJECTED
+    else:
+        return MRStatus.INDETERMINATE
+
 
 
 class ExpectedOutput(BaseModel):
