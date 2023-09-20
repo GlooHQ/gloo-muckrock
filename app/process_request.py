@@ -6,12 +6,12 @@ from enum import Enum
 import os
 import pandas as pd
 from collections import defaultdict
-from generated.functions import ExtractRequestData, Summarize
-from generated.custom_types import RecordsStatus, RequestStatus
+from ..generated.functions import ExtractRequestData, Summarize
+from ..generated.custom_types import RecordsStatus, RequestStatus
 from pydantic import BaseModel
 import json
 import os
-from generated.custom_types import FoiaTestCasePayload, FOIARequestData
+from ..generated.custom_types import FoiaTestCasePayload, FOIARequestData
 import tiktoken
 from gloo_py import trace, update_trace_tags
 
