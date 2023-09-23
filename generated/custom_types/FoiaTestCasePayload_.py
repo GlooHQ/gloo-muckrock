@@ -35,12 +35,12 @@ class FoiaTestCasePayload(BaseModel):
     tid: int
     cid: int
     username: str
-    communication: typing.Optional[str]
-    file_text: typing.Optional[str]
-    status: typing.Optional[str]
-    tracking_number: typing.Optional[str]
-    date_estimate: typing.Optional[str]
-    price: typing.Optional[float]
+    communication: typing.Optional[str] = None
+    file_text: typing.Optional[str] = None
+    status: typing.Optional[str] = None
+    tracking_number: typing.Optional[str] = None
+    date_estimate: typing.Optional[str] = None
+    price: typing.Optional[float] = None
     
 
 class StringifyFoiaTestCasePayload(StringifyClass[FoiaTestCasePayload]):
