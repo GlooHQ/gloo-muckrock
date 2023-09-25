@@ -35,10 +35,10 @@ from gloo_py.stringify import (
 )
 
 class FOIARequestData(BaseModel):
-    trackingNumber: typing.Optional[str] = None
-    dateEstimate: typing.Optional[str] = None
-    price: typing.Optional[float] = None
-    priceDetails: typing.Optional[str] = None
+    trackingNumber: typing.Optional[str]
+    dateEstimate: typing.Optional[str]
+    price: typing.Optional[float]
+    priceDetails: typing.Optional[str]
     reasoning: str
     requestStatus: RequestStatus
     recordsStatus: RecordsStatus
