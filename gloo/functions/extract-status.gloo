@@ -30,7 +30,7 @@
 }
 
 @variant[llm] v1 for ExtractRequestData {
-  @client[llm] GPT35Client
+  @client[llm] GPT4Client
 
   @stringify FOIARequestData {
     dateEstimate

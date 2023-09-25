@@ -6,7 +6,7 @@
 # flake8: noqa
 # pylint: skip-file
 # isort: skip_file
-from ....clients import GPT35Client
+from ....clients import GPT4Client
 from ....custom_types import FOIARequestData
 from ....custom_types import RecordsStatus
 from ....custom_types import RequestStatus
@@ -97,7 +97,7 @@ async def prompt_vars(arg: str) -> typing.Dict[str, str]:
     return vars
 
 Variantv1 = LLMVariant[str, FOIARequestData](
-    'ExtractRequestData', 'v1', prompt=prompt, client=GPT35Client, parser=parser, prompt_vars=prompt_vars)
+    'ExtractRequestData', 'v1', prompt=prompt, client=GPT4Client, parser=parser, prompt_vars=prompt_vars)
 
 async def RunVariant_v1(arg: str) -> FOIARequestData:
     return await Variantv1.run(arg)
