@@ -1,19 +1,24 @@
-import logging
-from typing import List, Callable, Awaitable, Any, Dict
-
-from enum import Enum
-
-import os
-import pandas as pd
-from collections import defaultdict
-from ..generated.functions import ExtractRequestData, Summarize
-from ..generated.custom_types import RecordsStatus, RequestStatus
-from pydantic import BaseModel
+# Standard Library
 import json
+import logging
 import os
-from ..generated.custom_types import FoiaTestCasePayload, FOIARequestData
+from collections import defaultdict
+from enum import Enum
+from typing import Any, Awaitable, Callable, Dict, List
+
+# Third Party
+import pandas as pd
 import tiktoken
 from gloo_py import trace, update_trace_tags
+from pydantic import BaseModel
+
+from ..generated.custom_types import (
+    FOIARequestData,
+    FoiaTestCasePayload,
+    RecordsStatus,
+    RequestStatus,
+)
+from ..generated.functions import ExtractRequestData, Summarize
 
 
 class MRStatus(Enum):
@@ -43,6 +48,7 @@ def map_status_(status: RequestStatus, recordsStatus: RecordsStatus):
     }
     return status_mapping.get(status, "INDETERMINATE")
 
+
 def map_status(data: FOIARequestData) -> MRStatus:
 
     both = (data.requestStatus, data.recordsStatus)
@@ -66,7 +72,6 @@ def map_status(data: FOIARequestData) -> MRStatus:
         return MRStatus.REJECTED
     else:
         return MRStatus.INDETERMINATE
-
 
 
 class ExpectedOutput(BaseModel):
@@ -115,14 +120,16 @@ def expected_gloo_statuses(mrStatus: MRStatus) -> ExpectedOutput:
     )
     return ExpectedOutput(status=status, recordsStatus=records_status)
 
+
 enc = tiktoken.encoding_for_model("gpt-4")
 
 
+@trace()
 async def process_request(request_text: str, file_text: str, **tags) -> FOIARequestData:
 
     if tags:
         update_trace_tags(**tags)
-    
+
     if file_text:
         file_text = f"Attached Correspondence:\n{file_text}"
         request_text = f"{request_text}\n{file_text}"
@@ -140,8 +147,6 @@ async def process_request(request_text: str, file_text: str, **tags) -> FOIARequ
     )
 
     return extractedData
-
-
 
 
 # This function is called by the Gloo ProcessRequestTestWrapper function in process-request-test-fn.gloo
@@ -162,7 +167,10 @@ async def process_request_test(test_case: FoiaTestCasePayload) -> FOIARequestDat
 
     return extracted_data
 
-async def process_request_metadata_test(test_case: FoiaTestCasePayload) -> FOIARequestData:
+
+async def process_request_metadata_test(
+    test_case: FoiaTestCasePayload,
+) -> FOIARequestData:
 
     extracted_data = await process_request(test_case.communication, test_case.file_text)
 
