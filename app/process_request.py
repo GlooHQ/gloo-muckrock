@@ -125,7 +125,7 @@ enc = tiktoken.encoding_for_model("gpt-4")
 
 
 @trace()
-async def process_request(request_text: str, file_text: str, **tags) -> FOIARequestData:
+async def process_request(request_text: str, file_text: str, **tags) -> (FOIARequestData, str):
 
     if tags:
         update_trace_tags(**tags)
@@ -145,8 +145,9 @@ async def process_request(request_text: str, file_text: str, **tags) -> FOIARequ
         "v1",
         request_text,
     )
+    status = map_status(extractedData)
 
-    return extractedData
+    return (extractedData, status.value)
 
 
 # This function is called by the Gloo ProcessRequestTestWrapper function in process-request-test-fn.gloo
@@ -156,23 +157,23 @@ async def process_request(request_text: str, file_text: str, **tags) -> FOIARequ
 # function is called, to be able to view associated metadata with each test case.
 # The need to declare the .gloo function may be removed in favor of a simpler
 # @gloo_test annotation.
-async def process_request_test(test_case: FoiaTestCasePayload) -> FOIARequestData:
+async def process_request_test(test_case: FoiaTestCasePayload) -> (FOIARequestData, str):
 
-    extracted_data = await process_request(test_case.communication, test_case.file_text)
+    extracted_data, status = await process_request(test_case.communication, test_case.file_text)
 
-    assert map_status(extracted_data) == MRStatus(test_case.status)
+    assert status == test_case.status
 
     if test_case.price:
         assert extracted_data.price == test_case.price
 
-    return extracted_data
+    return extracted_data, status
 
 
 async def process_request_metadata_test(
     test_case: FoiaTestCasePayload,
 ) -> FOIARequestData:
 
-    extracted_data = await process_request(test_case.communication, test_case.file_text)
+    extracted_data, _status = await process_request(test_case.communication, test_case.file_text)
 
     if test_case.tracking_number:
         assert extracted_data.trackingNumber == test_case.tracking_number
