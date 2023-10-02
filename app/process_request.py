@@ -146,6 +146,11 @@ async def process_request(request_text: str, file_text: str, **tags) -> (FOIAReq
         request_text,
     )
     status = map_status(extractedData)
+    update_trace_tags(
+        status=status.value,
+        has_tracking=str(extractedData.trackingNumber is not None),
+        has_date=str(extractedData.dateEstimate is not None),
+    )
 
     return (extractedData, status.value)
 
